@@ -48,5 +48,5 @@ function RecipeCard({ recipe }) {
   );
 }
 
-// ✅ Esportiamo il componente principale
+// Esporto il componente principale
 export default RandomRecipes;

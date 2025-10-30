@@ -77,8 +77,7 @@ export function parseRecipes(recipesArray) {
   // map() cicla su ogni elemento dell'array originale e restituisce un nuovo array trasformato
   return recipesArray.map(recipe => ({
     // tipo di piatto (appetizer, main course, dessert)
-    type: recipe.dishTypes[0],  
-
+    type: recipe.dishTypes?.[0] || 'N/A',
     // titolo della ricetta
     title: recipe.title,         
 
@@ -88,4 +87,18 @@ export function parseRecipes(recipesArray) {
     // tempo totale di preparazione = preparazione + cottura
     readyInMinutes: recipe.readyInMinutes || 'N/A',
   }));
+}
+
+export async function searchRecipes(query) {  // Riceve la query come parametro
+  const fullUrl = `${baseUrl}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&diet=vegetarian&number=10`;
+  console.log("URL ricerca:", fullUrl);
+  
+  try {
+    const response = await axios.get(fullUrl);
+    // Uso parseRecipes per pulire i dati
+    return parseRecipes(response.data.results);
+  } catch (error) {
+    console.error("Errore nella ricerca:", error);
+    throw error;
+  }
 }
