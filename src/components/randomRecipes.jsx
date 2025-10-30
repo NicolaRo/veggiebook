@@ -1,6 +1,3 @@
-// Import base da React
-// useState serve per gestire lo stato interno del componente
-import { useState } from "react";
 
 // Import dei dati che arrivano dal componente padre (App.js)
 // Non serve importare API qui, perché le chiamate sono già fatte in App.js
@@ -48,5 +45,5 @@ function RecipeCard({ recipe }) {
   );
 }
 
-// Esporto il componente principale
-export default RandomRecipes;
+// Esporto i componenti per riutilizzarli poi anche per visualizzare i risultati della ricerca utente.
+export { RandomRecipes, RecipeCard };

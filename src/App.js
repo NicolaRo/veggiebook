@@ -1,8 +1,10 @@
 import './style/App.scss';
+import SearchResults from "./components/searchResults.jsx"; 
 import { getRandomAppetizer, getRandomMaincourse, getRandomDessert, searchRecipes } from "./services/api";
 import { useEffect, useState } from "react";
 import { SearchBar } from "./components/searchbar";
-import RandomRecipes from "./components/randomRecipes.jsx";
+import { RandomRecipes } from "./components/randomRecipes.jsx";
+
 
 function App() {
   // Stati per le 3 ricette random
@@ -52,6 +54,9 @@ function App() {
         maincourse={maincourse}
         dessert={dessert}
       />
+
+      {searchResults.length > 0 && ( // Array condizionale -> SE l'array ha elementi, ALLORA mostra "SearchResults"
+      <SearchResults results={searchResults} />)}
     </div>
   );
 }
