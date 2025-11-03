@@ -86,6 +86,9 @@ export function parseRecipes(recipesArray) {
 
     // tempo totale di preparazione = preparazione + cottura
     readyInMinutes: recipe.readyInMinutes || 'N/A',
+
+    // Ottengo anche l'ID della ricetta per poterla tracciare
+    id: recipe.id,
   }));
 }
 

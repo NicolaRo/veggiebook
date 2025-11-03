@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🍃 Ricette VeggieBook</h1>
+      <h1>🥗 VeggieBook 🥙</h1>
       
       <SearchBar 
         onSearch={handleSearch} 

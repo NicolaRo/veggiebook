@@ -4,20 +4,30 @@
   color:#62c370;
 }
 
+.h1 {
+  text-align: center;
+  padding: 2rem;
+}
 
 .searchbar-container{
-display: flex;
-flex-direction: row;
-max-height: fit-content;
-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 12vh;
+  align-items: center;
 }
 
 .search-bar {
   display: flex;
-  max-width: 80vh;
-  margin: 1rem;
+  max-width: 40vh;
+  margin-right: 2%;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(39, 131, 26, 0.57);
+  height: 2rem;
+  background: #f1fcf3;
+  color: #397e437a;
+  font-weight: bolder;
+  font-size: 1.5rem;
 }
 
 .random-recipes-container {
@@ -25,7 +35,12 @@ justify-content: center;
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding-top: 2rem;
+  background-image: linear-gradient(to bottom, rgba(248, 248, 248, 0), rgba(0, 128, 0, 0.3490196078));
+  padding-right: 0.5rem;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .search-button{
@@ -42,34 +57,61 @@ justify-content: center;
 .recipe-card {
   border: 1px solid #ddd;
   border-radius: 12px;
-  padding: 1rem;
-  max-width: 250px;
+  width: 95vh;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 250px;
 }
 
 .recipe-image {
   width: 100%;
+  height: 250px;
   border-radius: 10px;
 }
 
 .recipe-title {
   font-size: 1.2rem;
   margin: 0.5rem 0;
+  width: fit-content;
+  padding: 0.5rem;
+  backdrop-filter: blur(20px);
+  color: #504e4e;
+  border-radius: 6px;
+  border: solid 1px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: 1rem;
+  padding: 5px;
+  bottom: 43%;
+  background-color: #fefefe21;
 }
 
 .recipe-time {
-  color: #666;
+  width: fit-content;
+  padding: 0.5rem;
+  backdrop-filter: blur(10px);
+  color: #727070;
+  border-radius: 6px;
+  border: solid 1px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  bottom: 45%;
+  left: 5%;
 }
 
 .recipe-button {
   margin-top: 0.5rem;
-  background: #62c370;
+  background: rgba(28, 180, 50, 0.368627451);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
+  position: relative;
+  right: -34%;
+  bottom: 65%;
+  backdrop-filter: blur(10px);
+  font-weight: bolder;
 }
 
 
