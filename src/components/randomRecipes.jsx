@@ -14,33 +14,31 @@ function RandomRecipes({ appetizer, maincourse, dessert }) {
   return (
     <div className="random-recipes-container">
       {/* Ogni componente RecipeCard riceve un oggetto "recipe" come prop */}
-      <RecipeCard recipe={appetizer} />
-      <RecipeCard recipe={maincourse} />
-      <RecipeCard recipe={dessert} />
+      <RecipeCard recipe={appetizer} styleType="random"/>
+      <RecipeCard recipe={maincourse} styleType="random"/>
+      <RecipeCard recipe={dessert} styleType="random"/>
     </div>
   );
 }
 
 // 🔹 Componente per mostrare una singola ricetta
-function RecipeCard({ recipe }) {
-  // "recipe" è un oggetto con { title, image, readyInMinutes }
+function RecipeCard({ recipe, styleType = "random" }) {
   return (
-    <div className="recipe-card">
-      {/* Immagine della ricetta */}
+    <div className={`recipe-card recipe-card--${styleType}`}>
       <img
         src={recipe.image}
         alt={recipe.title}
-        className="recipe-image"
+        className={`recipe-image recipe-image--${styleType}`}
       />
-
-      {/* Titolo della ricetta */}
-      <h3 className="recipe-title">{recipe.title}</h3>
-
-      {/* Tempo di preparazione */}
-      <p className="recipe-time">⏱️ {recipe.readyInMinutes} minuti</p>
-
-      {/* Bottone per visualizzare dettagli */}
-      <button className="recipe-button">Vedi ricetta</button>
+      <h3 className={`recipe-title recipe-title--${styleType}`}>
+        {recipe.title}
+      </h3>
+      <p className={`recipe-time recipe-time--${styleType}`}>
+        ⏱️ {recipe.readyInMinutes} minuti
+      </p>
+      <button className={`recipe-button recipe-button--${styleType}`}>
+        Vedi ricetta
+      </button>
     </div>
   );
 }
