@@ -1,6 +1,6 @@
 // File principale in cui vive tutta l'App
 // Importo i componenti necessari
-import "./style/App.scss";
+import "./style/main.scss";
 import SearchResults from "./components/searchResults.jsx";
 
 import {

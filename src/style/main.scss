@@ -1,3 +1,46 @@
+
+//  🌿 Veggiebook stile di base
+// ============================
+
+// Import dei moduli base
+@import 'normalize.css';
+@import './base/reset';
+@import './base/variables';
+@import './base/mixins';
+@import './components/buttons';
+
+
+// ============================
+//  Global Reset / Base Setup
+// ============================
+* {
+  box-sizing: border-box; // padding e border siano inclusi nella larghezza/altezza dell’elemento
+  // Metto i seguenti valori a "0" per non farli interferire con quelli di default del browser 
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; // 1rem = 16px
+  scroll-behavior: smooth; // transizioni "smooth" durante lo scroll 
+}
+
+body {
+  font-family: 'poppins';
+  background-color: $color-bg; // definito in _variables.scss
+  color: $color-text;
+  min-height: 100vh; // corpo sempre alto quanto l'intera finestra
+  display: flex; // Lo imposto qua così a cascata tutti i "figli" otterranno la struttura flessibile
+  flex-direction: column; // best practice per layout verticali 
+}
+/* 
+
+
+
+
+
+
+=============================
 .app-title{
   position: fixed;
   height: 10vh;
@@ -210,3 +253,4 @@
   bottom: 8vh;
   left: 32vh;
 }
+ */

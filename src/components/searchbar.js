@@ -1,4 +1,4 @@
-import "../style/App.scss"
+import "../style/main.scss"
 import { useState } from "react";  // Importo ed imposto lo useState
 
 export function SearchBar({ onSearch, isLoading }) {

@@ -1,0 +1,20 @@
+// Breakpoints - taglie dello schermo "$sm" = small; "$md" = medium.. ecc
+
+$sm: 480px;   // Small: smartphone
+$md: 768px;   // Medium: tablet
+$lg: 1024px;  // Large: laptop
+$xl: 1440px;  // Extra large: monitor desktop
+
+
+// Palette (placeholder, cambiamo dopo per il Glass)
+$color-primary: #62c370;
+$color-accent: #397e43;
+$color-bg: #f7faf8;
+$color-text: #1c1c1c;
+
+// Spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
