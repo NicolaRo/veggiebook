@@ -1,47 +1,55 @@
-
-// Import dei dati che arrivano dal componente padre (App.js)
-// Non serve importare API qui, perché le chiamate sono già fatte in App.js
-// Qui riceviamo solo i 3 oggetti come props
-// E renderizziamo i risultati
-function RandomRecipes({ appetizer, maincourse, dessert }) {
-
-  // Se i dati non sono ancora pronti (es. durante il caricamento), mostriamo un messaggio
+//Creo la funzione RandomRecipes che accetta come parametri "appetizer", "maincourse", "dessert" e "onViewRecipe"
+// onViewRecipe è una props della funzione SearchResults e serve per visualizzare i risultati della query
+function RandomRecipes({ appetizer, maincourse, dessert, onViewRecipe }) {
   if (!appetizer || !maincourse || !dessert) {
     return <p>Caricamento ricette...</p>;
   }
-
-  // Quando tutto è pronto, mostriamo le 3 card
+  
+  // Faccio "return" con cui renderizzo dentro le "RecipeCard" i risultati della chiamata API per le ricette Random
   return (
     <div className="random-recipes-container">
-      {/* Ogni componente RecipeCard riceve un oggetto "recipe" come prop */}
-      <RecipeCard recipe={appetizer} styleType="random"/>
-      <RecipeCard recipe={maincourse} styleType="random"/>
-      <RecipeCard recipe={dessert} styleType="random"/>
+      <h3>Cerchi ispirazione?</h3>
+      <RecipeCard recipe={appetizer} styleType="random" onViewRecipe={onViewRecipe} />
+      <RecipeCard recipe={maincourse} styleType="random" onViewRecipe={onViewRecipe} />
+      <RecipeCard recipe={dessert} styleType="random" onViewRecipe={onViewRecipe} />
     </div>
   );
 }
 
-// 🔹 Componente per mostrare una singola ricetta
-function RecipeCard({ recipe, styleType = "random" }) {
+// Imposto una funzione per gestire i risultati random all'avvio dell'App (indico quali dati prendere dal responso della API e visualizzarli in quale ordine)
+
+function RecipeCard({ recipe, styleType = "random", onViewRecipe }) {
   return (
+
+    // Creo un contenitore "recipe-card" 
     <div className={`recipe-card recipe-card--${styleType}`}>
+
+      {/* Al primo posto l'immagine*/}
       <img
         src={recipe.image}
         alt={recipe.title}
         className={`recipe-image recipe-image--${styleType}`}
       />
+
+       {/* Poi l'immagine della ricetta */}
       <h3 className={`recipe-title recipe-title--${styleType}`}>
         {recipe.title}
       </h3>
+
+       {/* Il tempo di preparazione */}
       <p className={`recipe-time recipe-time--${styleType}`}>
         ⏱️ {recipe.readyInMinutes} minuti
       </p>
-      <button className={`recipe-button recipe-button--${styleType}`}>
+
+       {/* Un bottone con funzione "onClick" comunicherà ad "api.js" di richiedere i dettagli della rispettiva ricetta */}
+      <button 
+        className={`recipe-button recipe-button--${styleType}`}
+        onClick={() => onViewRecipe(recipe.id)}
+      >
         Vedi ricetta
       </button>
     </div>
   );
 }
 
-// Esporto i componenti per riutilizzarli poi anche per visualizzare i risultati della ricerca utente.
 export { RandomRecipes, RecipeCard };

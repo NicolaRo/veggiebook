@@ -104,4 +104,20 @@ export async function searchRecipes(query) {  // Riceve la query come parametro
     console.error("Errore nella ricerca:", error);
     throw error;
   }
+
+}
+
+
+export async function getRecipeDetails(id) {
+  const fullUrl = `${baseUrl}/recipes/${id}/information?apiKey=${apiKey}`;
+
+  console.log("Richiesta dettagli ricetta:", fullUrl);
+
+  try {
+    const response = await axios.get(fullUrl);
+    return response.data; // qui ottieni i dettagli completi della ricetta
+  } catch (error) {
+    console.error("Errore durante il fetch dei dettagli:", error);
+    throw error;
+  }
 }

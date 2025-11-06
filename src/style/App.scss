@@ -16,6 +16,13 @@
   margin-top: 0;
 }
 
+.h3 {
+  position: relative;
+  top: 25%;
+  text-align: justify;
+  margin: 1rem;
+}
+
 .searchbar-container{
   display: flex;
   flex-direction: row;
@@ -137,30 +144,28 @@
   right: 0.5rem;
 }
 
-
+// Style dei risultati di ricerca
 .search-result-container {
   padding-top: 5%;
   background-image: linear-gradient(to bottom, rgba(248, 248, 248, 0), rgba(0, 128, 0, 0.3490196078));
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
+  position:relative;
 }
-// Style dei risultati di ricerca
-
-
-.recipe-card recipe-card--search{
+.recipe-card--search{
   margin-bottom: 2%;
   background: aqua;
   height: 45vh;
   width: 95%;
   margin-bottom: 2rem;
 }
-.recipe-image recipe-image--search {
+.recipe-image--search {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
-.recipe-title recipe-title--search {
+.recipe-title--search {
   font-size: 1.5rem;
   backdrop-filter: blur(20px);
   color: #fff;
@@ -176,7 +181,7 @@
   top: 5vh;
 }
 
-.recipe-time recipe-time--search {
+.recipe-time--search {
   backdrop-filter: blur(10px);
   color: #fff;
   border-radius: 6px;
@@ -190,7 +195,7 @@
   bottom: 8vh;
 }
 
-.recipe-button recipe-button--search {
+.recipe-button--search {
   background: rgba(28, 180, 50, 0.54);
   color: white;
   border: none;
