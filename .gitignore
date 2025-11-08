@@ -23,7 +23,7 @@ yarn-error.log*
 # Environment files (contengono credenziali/segreti)
 .env
 .env.*
-!.env.example   # mantieni solo il file di esempio
+!.env.example   #mantieni solo il file di esempio
 .env.local
 .env.development.local
 .env.test.local

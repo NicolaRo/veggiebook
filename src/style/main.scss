@@ -8,6 +8,8 @@
 @import './base/variables';
 @import './base/mixins';
 @import './components/buttons';
+@import './components/searchbar';
+@import './components/cards';
 
 
 // ============================
@@ -33,6 +35,15 @@ body {
   display: flex; // Lo imposto qua così a cascata tutti i "figli" otterranno la struttura flessibile
   flex-direction: column; // best practice per layout verticali 
 }
+
+.logo-veggiebook {
+  max-width: 100px;
+  max-height: 100px;
+  position: flex;
+  flex-direction: column;
+  object-position: center;
+}
+
 /* 
 
 
@@ -50,15 +61,6 @@ body {
   width: 100vh; 
 }
 
-.h1 {
-  position: fixed;
-  height: 10vh;
-  backdrop-filter: blur(10px);
-  z-index: 100;
-  width: 100vh;
-  margin-top: 0;
-}
-
 .h3 {
   position: relative;
   top: 25%;
@@ -66,43 +68,9 @@ body {
   margin: 1rem;
 }
 
-.searchbar-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 12vh;
-  align-items: center;
-  position: sticky;
-  top: 10vh;
-  z-index: 90;
-  backdrop-filter: blur(10px);
-}
 
-.search-bar {
-  display: flex;
-  max-width: 40vh;
-  margin-right: 2%;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(39, 131, 26, 0.57);
-  height: 2rem;
-  background: #f1fcf3;
-  color: #397e437a;
-  font-weight: bolder;
-  font-size: 1.5rem;
-  border: none;
-}
 
-.search-button{
-  background: #62c370;
-  color: white;
-  font-weight: 800;
-  border: solid 2px rgba(233, 243, 233, 0.511);
-  padding: 0.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  max-height: fit-content;
-  border: none;
-}
+
 
 .random-recipes-container{
   display: block ruby;
@@ -112,16 +80,7 @@ body {
   position: relative;
 }
 
-.search-button--random{
-  background: #62c370;
-  color: white;
-  font-weight: 800;
-  border: solid 2px rgba(233, 243, 233, 0.511);
-  padding: 0.5rem;
-  border-radius: 6px;
-  cursor: pointer;
-  max-height: fit-content;
-}
+
 
 .recipe-card--random {
   border: 1px solid #ddd;
@@ -171,21 +130,7 @@ body {
   bottom: -0.5rem;
 }
 
-.recipe-button--random {
-  background: rgba(28, 180, 50, 0.54);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  position: absolute;
-  backdrop-filter: blur(10px);
-  font-weight: bolder;
-  font-size: 0.75rem;
-  height: fit-content;
-  padding: 0.5rem;
-  bottom: -0.0rem;
-  right: 0.5rem;
-}
+
 
 // Style dei risultati di ricerca
 .search-result-container {
@@ -238,19 +183,5 @@ body {
   bottom: 8vh;
 }
 
-.recipe-button--search {
-  background: rgba(28, 180, 50, 0.54);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  backdrop-filter: blur(10px);
-  font-weight: bolder;
-  font-size: 1.5rem;
-  height: fit-content;
-  padding: 0.5rem;
-  bottom: 8vh;
-  left: 32vh;
-}
+
  */

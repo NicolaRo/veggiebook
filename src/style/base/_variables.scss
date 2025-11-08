@@ -9,8 +9,15 @@ $xl: 1440px;  // Extra large: monitor desktop
 // Palette (placeholder, cambiamo dopo per il Glass)
 $color-primary: #62c370;
 $color-accent: #397e43;
-$color-bg: #f7faf8;
+$color-bg: linear-gradient(to bottom, rgba(248, 248, 248, 0.985), rgba(0, 128, 0, 0.99));
 $color-text: #1c1c1c;
+
+// Glassmorphism (stile Apple)
+
+$glass-bg: rgba(255,255,255,0.14);   // sfondo vetro
+$glass-border: rgba(255,255,255,0.28);
+$glass-shadow: 0 6px 24px rgba(8, 30, 10, 0.12);
+$glass-radius: 12px;
 
 // Spacing
 $space-xs: 0.25rem;

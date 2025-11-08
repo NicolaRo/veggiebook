@@ -31,8 +31,9 @@ function App() {
   // Nuovo stato per il loading
   const [isLoading, setIsLoading] = useState(false);
 
-  // Carica le 3 ricette random all'avvio
-  useEffect(() => {
+  // Funzione per caricare 3 ricette random (una per appetizer, una per maincourse ed una per dessert) all'avvio
+  useEffect(() => { 
+
     getRandomAppetizer().then((data) => setAppetizer(data.recipes[0]));
     getRandomMaincourse().then((data) => setMaincourse(data.recipes[0]));
     getRandomDessert().then((data) => setDessert(data.recipes[0]));
@@ -67,7 +68,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1>🥗 VeggieBook 🥙</h1>
+      <div className="logo-container">
+        <img className="logo-veggiebook" src="/img/VeggieBook-logo.png" alt="logo Veggie Book"></img>
+      </div>
+      <div className="header">
+        <h1>🥗 VeggieBook 🥙</h1>
+      </div>
 
       <SearchBar onSearch={handleSearch} isLoading={isLoading} />
 
