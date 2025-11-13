@@ -10,86 +10,103 @@ export function SelectedRecipeModal({ recipe, onClose }) {
   // Con "return" visualizzo il modale con la ricetta selezionata dall'utente
   return (
     // Creo un contenitore unico per farlo vivere all'interno del modale
-    <div className="contenitore-principale">
-      {/* Bottone per chiudere il modale */}
-      <div className="bottone-chiusura-modale">
-        <button onClick={onClose}>Chiudi</button>
-      </div>
+    <div className="overlay-modale">
+      <div className="contenitore-principale">
+        {/* Bottone per chiudere il modale */}
+        <div>
+          <button className="bottone-chiudi-modale"  
+            onClick={onClose}>
+            Chiudi
+          </button>
+        </div>
 
-      {/* Titolo della ricetta selezionata */}
-      <div className="titolo-ricetta-modale">
-        <h2>{recipe.title}</h2>
-      </div>
+        {/* Titolo della ricetta selezionata */}
+        <div className="titolo-ricetta-modale">
+          <h2>{recipe.title}</h2>
+        </div>
 
-      {/* Immagine della ricetta selezionata */}
-      <div className="immagine-ricetta-modale">
-        <img src={recipe.image} alt="foto della ricetta" />
-      </div>
+        {/* Immagine della ricetta selezionata */}
+        <div>
+          <img
+            className="immagine-ricetta-modale"
+            src={recipe.image}
+            alt="foto della ricetta"
+          />
+        </div>
 
-      {/* Contenitore della descrizione della ricetta */}
-      <section className="description">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: recipe.summary || "Nessuna descrizione disponibile.",
-          }}
-        />
-      </section>
-
-      {/* Contenitore collassabile per la lista degli ingredienti */}
-      <div className="contenitore-ingredienti">
+        {/* Contenitore della descrizione della ricetta */}
         <section>
-          <div className="bottone-ingredienti-collassabile">
-            <button onClick={() => setShowIngredients(!showIngredients)}>
-              {showIngredients
-                ? "Nascondi Ingredienti"
-                : "Lista Ingredienti"}
-            </button>
-          </div>
+          <div
+            className="description"
+            dangerouslySetInnerHTML={{
+              __html: recipe.summary || "Nessuna descrizione disponibile.",
+            }}
+          />
+        </section>
 
-          {showIngredients && (
-            <ul>
-              {recipe.extendedIngredients?.map((item) => (
-                <li key={item.id}>
-                  <img
-                    src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
-                    alt={item.name}
-                  />
-                  {item.original}
-                </li>
-              ))}
-            </ul>
+        {/* Contenitore collassabile per la lista degli ingredienti */}
+        <div>
+          <section>
+            <div className="container-btn-ingredienti">
+              <button
+                className="bottone-mostra-ingredienti"
+                onClick={() => setShowIngredients(!showIngredients)}
+              >
+                {showIngredients ? "Nascondi Ingredienti" : "Lista Ingredienti"}
+              </button>
+            </div>
+
+            {showIngredients && (
+              <ul>
+                {recipe.extendedIngredients?.map((item) => (
+                  <li key={item.id}>
+                    <img
+                      src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
+                      alt={item.name}
+                    />
+                    {item.original}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        </div>
+
+        {/* Contenitore per la guida di preparazione (collassabile) */}
+        <section className="preparazione">
+          <button
+            className="bottone-chiusura-modale"
+            onClick={() => setShowInstructions(!showInstructions)}
+          >
+            {showInstructions
+              ? "Nascondi Preparazione"
+              : "Mostra guida alla Preparazione"}
+          </button>
+          {showInstructions && (
+            <div
+              dangerouslySetInnerHTML={{
+                __html: recipe.instructions || "N/A",
+              }}
+            />
+          )}
+        </section>
+
+        {/* Contenitore collassabile per la conservazione */}
+        <section className="conservazione">
+          <button
+            className="bottone-mostra-conservazione"
+            onClick={() => setShowConservation(!showConservation)}
+          >
+            {showConservation ? "Nascondi Conservazione" : "Conservazione"}
+          </button>
+          {showConservation && (
+            <p>
+              Conserva in frigorifero per massimo 2 giorni in contenitore
+              ermetico. (testo segnaposto)
+            </p>
           )}
         </section>
       </div>
-
-      {/* Contenitore per la guida di preparazione (collassabile) */}
-      <section className="preparazione">
-        <button onClick={() => setShowInstructions(!showInstructions)}>
-          {showInstructions
-            ? "Nascondi Preparazione"
-            : "Mostra guida alla Preparazione"}
-        </button>
-        {showInstructions && (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: recipe.instructions || "N/A",
-            }}
-          />
-        )}
-      </section>
-
-      {/* Contenitore collassabile per la conservazione */}
-      <section className="conservazione">
-        <button onClick={() => setShowConservation(!showConservation)}>
-          {showConservation ? "Nascondi Conservazione" : "Conservazione"}
-        </button>
-        {showConservation && (
-          <p>
-            Conserva in frigorifero per massimo 2 giorni in contenitore
-            ermetico. (testo segnaposto)
-          </p>
-        )}
-      </section>
     </div>
   );
 }

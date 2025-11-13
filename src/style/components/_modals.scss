@@ -1,14 +1,50 @@
-.contenitore-principale{
-z-index: 1000000;
-position: absolute;
-background: rgb(23, 177, 127);
-box-shadow: 0 6px 24px rgba(8, 30, 10, 0.12);
-padding: 0.75rem;
-width: 350px;
+@import '../base/variables';
+
+.overlay-modale {
+position: fixed;
+top: 10vh;
+left: 0;
+width: 100vw;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: $glass-bg;
+backdrop-filter: blur(20px);
+z-index: 999;
 }
 
-.immagine-ricetta-modale {
-    max-width: 350px;
-    position: relative;
+.contenitore-principale {
+position: relative;
+background: $glass-surface;
+border-radius: $glass-radius;
+box-shadow: $shadow-soft;
+padding: 1rem;
+max-width: 100vh;
+min-width: 100vh;
+padding: 0.5rem;
+top:50%;
+}
 
+
+.description {
+    position: relative;
+    background-color: $glass-bg;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.immagine-ricetta-modale{
+    position:relative;
+    width: 100%;
+    height: auto;
+    border-radius: $glass-radius;
+}
+
+.bottone-mostra-ingredienti {
+    background-color: red;
+}
+
+.conservazione{
+    background-color: aqua;
 }

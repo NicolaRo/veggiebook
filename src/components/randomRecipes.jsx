@@ -8,11 +8,9 @@ function RandomRecipes({ appetizer, maincourse, dessert, onViewRecipe }) {
   // Faccio "return" con cui renderizzo dentro le "RecipeCard" i risultati della chiamata API per le ricette Random
   return (
     <div className="random-recipes-container">
-      <div className="random-recipes-cards-container">
-        <RecipeCard recipe={appetizer} styleType="random" onViewRecipe={onViewRecipe} />
-        <RecipeCard recipe={maincourse} styleType="random" onViewRecipe={onViewRecipe} />
-        <RecipeCard recipe={dessert} styleType="random" onViewRecipe={onViewRecipe} />
-      </div>
+      <RecipeCard recipe={appetizer} styleType="random" onViewRecipe={onViewRecipe} />
+      <RecipeCard recipe={maincourse} styleType="random" onViewRecipe={onViewRecipe} />
+      <RecipeCard recipe={dessert} styleType="random" onViewRecipe={onViewRecipe} />
     </div>
   );
 }

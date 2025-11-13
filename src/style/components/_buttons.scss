@@ -23,20 +23,22 @@
   }
 
   .recipe-button--random {
-    background: rgba(28, 180, 50, 0.54);
-    color: white;
+    background-color: #26ff003d;
+    backdrop-filter: blur(10px);
+    color: $color-text;
     border: none;
-    border-radius: 6px;
+    border-radius: $glass-radius;
     cursor: pointer;
     position: relative;
-    backdrop-filter: blur(10px);
     font-weight: bolder;
     font-size: 0.75rem;
     height: fit-content;
     width:fit-content;
     padding: 0.5rem;
-    bottom: -0.0rem;
-    z-index: 100;
+    bottom: 2rem;
+    left: 3.5rem;
+    border-radius: $glass-radius;
+    box-shadow:$box-shadow;
   }
 
   .recipe-button--search {
@@ -58,7 +60,52 @@
   ////////////// Bottoni Modale ///////////////
   /// 
   /// 
-  .bottone-chiusura-modale {
-    background-color: red;
+.bottone-chiudi-modale {
+  background: #ff000c29;
+  color: white;
+  border: solid 2px #f3060630;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  backdrop-filter: blur(20px);
+  font-weight: bolder;
+  font-size: 0.75rem;
+  width: fit-content;
+  padding: 0.5rem;
+  top: 200%;
+  left: 80%;
+}
 
+  .bottone-mostra-conservazione {
+    background:$color-primary;
+    color: $button-text;
+    border: none;
+    border-radius: $glass-radius;
+    cursor: pointer;
+    position: relative;
+    backdrop-filter: blur(10px);
+    font-weight: bolder;
+    font-size: 0.75rem;
+    height: fit-content;
+    padding: 0.5rem;
+    bottom: 8vh;
+    left: 32vh;;
+  }
+
+
+  .bottone-mostra-ingredienti {
+    background: #62c37061;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  font-weight: bolder;
+  font-size: 0.75rem;
+  height: fit-content;
+  padding: 0.5rem;
+  position: relative;
+  width: fit-content;
+  top: -1008%;
+  left: 0;
   }
