@@ -28,21 +28,22 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     backdrop-filter: blur(10px);
     font-weight: bolder;
     font-size: 0.75rem;
     height: fit-content;
+    width:fit-content;
     padding: 0.5rem;
     bottom: -0.0rem;
-    right: 0.5rem;
+    z-index: 100;
   }
 
   .recipe-button--search {
-    background: rgba(28, 180, 50, 0.54);
-    color: white;
+    background:$color-primary;
+    color: $button-text;
     border: none;
-    border-radius: 6px;
+    border-radius: $glass-radius;
     cursor: pointer;
     position: relative;
     backdrop-filter: blur(10px);
@@ -52,4 +53,12 @@
     padding: 0.5rem;
     bottom: 8vh;
     left: 32vh;
+  }
+
+  ////////////// Bottoni Modale ///////////////
+  /// 
+  /// 
+  .bottone-chiusura-modale {
+    background-color: red;
+
   }

@@ -2,12 +2,13 @@
 @import '/src/style/base/mixins';
 @import '/src/style/base/reset';
 
+
 .searchbar-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
-    top: 20vh;
+    position: relative;
+    width: 90%;
     z-index: 90;
     /* Glassmorphism */
     background: $glass-bg;

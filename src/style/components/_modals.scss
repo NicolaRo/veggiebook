@@ -1,0 +1,14 @@
+.contenitore-principale{
+z-index: 1000000;
+position: absolute;
+background: rgb(23, 177, 127);
+box-shadow: 0 6px 24px rgba(8, 30, 10, 0.12);
+padding: 0.75rem;
+width: 350px;
+}
+
+.immagine-ricetta-modale {
+    max-width: 350px;
+    position: relative;
+
+}

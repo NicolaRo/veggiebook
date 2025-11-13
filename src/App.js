@@ -2,7 +2,6 @@
 // Importo i componenti necessari
 import "./style/main.scss";
 import SearchResults from "./components/searchResults.jsx";
-
 import {
   getRandomAppetizer,
   getRandomMaincourse,
@@ -10,12 +9,11 @@ import {
   searchRecipes,
   getRecipeDetails,
 } from "./services/api";
-
 import { useEffect, useState } from "react";
 import { SearchBar } from "./components/searchbar";
 import { RandomRecipes } from "./components/randomRecipes.jsx";
 import SelectedRecipeModal from "./components/SelectedRecipeModal.jsx";
-
+import { getCachedRandomRecipe, getCachedSearch, getCachedRecipeDetails } from "./services/apiCache";
 
 function App() {
   // Stati per le 3 ricette random
@@ -27,40 +25,43 @@ function App() {
 
   // Nuovo stato per i risultati della ricerca
   const [searchResults, setSearchResults] = useState([]);
-
+  
   // Nuovo stato per il loading
   const [isLoading, setIsLoading] = useState(false);
 
-  // Funzione per caricare 3 ricette random (una per appetizer, una per maincourse ed una per dessert) all'avvio
+  // Funzione per caricare 3 ricette random con cache
   useEffect(() => { 
-
-    getRandomAppetizer().then((data) => setAppetizer(data.recipes[0]));
-    getRandomMaincourse().then((data) => setMaincourse(data.recipes[0]));
-    getRandomDessert().then((data) => setDessert(data.recipes[0]));
+    getCachedRandomRecipe(getRandomAppetizer, 'randomAppetizer')
+      .then((data) => setAppetizer(data.recipes[0]));
+    
+    getCachedRandomRecipe(getRandomMaincourse, 'randomMaincourse')
+      .then((data) => setMaincourse(data.recipes[0]));
+    
+    getCachedRandomRecipe(getRandomDessert, 'randomDessert')
+      .then((data) => setDessert(data.recipes[0]));
   }, []);
 
-  // Funzione che gestisce la ricerca
+  // Funzione che gestisce la ricerca con cache
   async function handleSearch(query) {
-    setIsLoading(true); // Attiva loading
+    setIsLoading(true);
     try {
-      const results = await searchRecipes(query); // Chiama API
-      setSearchResults(results); // Salva risultati
+      const results = await getCachedSearch(searchRecipes, query);
+      setSearchResults(results);
       console.log("Risultati trovati:", results);
-
     } catch (error) {
       console.error("Errore nella ricerca:", error);
       alert("Errore durante la ricerca. Riprova.");
     } finally {
-      
-      setIsLoading(false); // Disattiva loading (sempre, anche se c'è errore)
+      setIsLoading(false);
     }
   }
 
+  // Funzione per visualizzare dettagli ricetta con cache
   async function handleViewRecipe(id) {
     try {
-      const details = await getRecipeDetails(id);
-      setSelectedRecipe(details); // Ottengo i "details" ovvero la ricetta
-      setIsModalOpen(true); // Apro il modale per visualizzarla
+      const details = await getCachedRecipeDetails(getRecipeDetails, id);
+      setSelectedRecipe(details);
+      setIsModalOpen(true);
     } catch (error) {
       console.error("Errore nel caricamento dei dettagli:", error);
     }
@@ -69,34 +70,36 @@ function App() {
   return (
     <div className="App">
       <div className="logo-container">
-        <img className="logo-veggiebook" src="/img/VeggieBook-logo.png" alt="logo Veggie Book"></img>
-      </div>
-      <div className="header">
-        <h1>🥗 VeggieBook 🥙</h1>
-      </div>
+            <img className="logo-veggiebook" src="/img/VeggieBook-logo.png" alt="logo Veggie Book"></img>
+          <h1>🥗 VeggieBook 🥙</h1>
+        </div>
+        
+    <SearchBar onSearch={handleSearch} isLoading={isLoading} />
+        
+     <div className="random-recipes-header">
+      <h3>Cerchi ispirazione?👩🏻‍🍳</h3>
+     </div>
 
-      <SearchBar onSearch={handleSearch} isLoading={isLoading} />
+    <RandomRecipes
+      appetizer={appetizer}
+      maincourse={maincourse}
+      dessert={dessert}
+      onViewRecipe={handleViewRecipe}
+    />
 
-      <RandomRecipes
-        appetizer={appetizer}
-        maincourse={maincourse}
-        dessert={dessert}
-        onViewRecipe={handleViewRecipe}
-      />
-
-      {searchResults.length > 0 && ( // Array condizionale -> SE l'array ha elementi, ALLORA mostra "SearchResults"
+      {searchResults.length > 0 && (
         <SearchResults
           results={searchResults}
           onViewRecipe={handleViewRecipe}
         />
       )}
-      {isModalOpen && selectedRecipe && (
-  <SelectedRecipeModal
-    recipe={selectedRecipe}
-    onClose={() => setIsModalOpen(false)}
-  />
-)}
 
+      {isModalOpen && selectedRecipe && (
+        <SelectedRecipeModal
+          recipe={selectedRecipe}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

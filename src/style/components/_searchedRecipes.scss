@@ -1,0 +1,54 @@
+.search-results-container {
+    position: relative;
+    top: 15vh;
+}
+
+.search-result-container {
+    padding-top: 5%;
+    background-image: linear-gradient(to bottom, rgba(248, 248, 248, 0), rgba(0, 128, 0, 0.3490196078));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position:relative;
+  }
+  .recipe-card--search{
+    margin-bottom: 2%;
+    background: aqua;
+    height: 45vh;
+    width: 95%;
+    margin-bottom: 2rem;
+  }
+  .recipe-image--search {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .recipe-title--search {
+    font-size: 1.5rem;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.1019607843);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    background-color: rgba(254, 254, 254, 0);
+    width: fit-content;
+    max-width: 90%;
+    padding: 0.5rem;
+    overflow-x: scroll;
+    top: 5vh;
+  }
+  
+  .recipe-time--search {
+    backdrop-filter: blur(10px);
+    color: #fff;
+    border-radius: 6px;
+    border: solid 1px rgba(0, 0, 0, 0.1019607843);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem;
+    width: fit-content;
+    bottom: 8vh;
+  }
