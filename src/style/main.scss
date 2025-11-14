@@ -52,3 +52,18 @@ padding: 2rem;
 h1 {
   text-align: center;
 }
+
+.footer {
+  background-color:green;
+  position:fixed;
+  bottom:0;
+  height:fit-content;
+}
+
+.social-icon{
+  width: 40px;
+  display: flex;
+  flex-direction: row;
+  padding: $space-sm;
+  align-items: center;
+}
