@@ -1,22 +1,12 @@
 @import '../base/variables';
 
 .overlay-modale {
-/* position: fixed;
-top: 10vh;
-left: 0;
-width: 100vw;
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background-color: $glass-bg;
-backdrop-filter: blur(20px);
-z-index: 999; */
+position: relative;
 width: 100%;
-  position: relative;
-  margin: 0.5rem;
-  align-content: center;
+padding: 0.5rem;
+background-image: $color-bg;
 }
+
 
 .contenitore-principale {
 position: relative;
@@ -27,36 +17,62 @@ min-width: 100vw;
 top:50%;
 }
 
-.description {
+.titolo-ricetta-modale{
 position: relative;
+top: 3.5rem;
+left: 0.5rem;
 background-color: $glass-bg;
-width: 100%;
-padding: 0.5rem;
-}
-
-.titolo-ricetta-modale {
-position: relative;
 backdrop-filter: blur(20px);
-background-color: $glass-bg;
-border-radius: $border-radius;
+color: $color-text;
+box-shadow: $glass-box-shadow;
 border: $glass-border;
+border-radius: $glass-radius;
 padding: $space-sm;
+font-size: 0.9rem;
+width: fit-content;
 }
 
 .immagine-ricetta-modale{
-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
-  width: 90%;
-  display: grid;
-  justify-items: center;
-  border-radius: 12px;
-  margin: 1rem;
+width: 100%;
+padding: $space-xs;
+border-radius: $glass-radius;
+box-shadow: $glass-box-shadow;
+}
+.description {
+position: relative;
+width: 100%;
+padding: $space-xs;
+background-color: $glass-bg;
+backdrop-filter: blur(20px);
+margin-top: 35px;
+border-radius: $glass-radius;
+
+}
+/////////////// lista ingredienti
+/// 
+.container-ingredienti{
+margin-top:$space-lg;
+display: flex;
+flex-direction: row;
+overflow: scroll;
+width: 100%;
+gap:$space-xs;
+background-color: $glass-bg;
+padding:$space-lg;
+text-decoration: none;
+border-radius: 12px;
+box-shadow: $glass-box-shadow;
 }
 
-
-.bottone-mostra-ingredienti {
-    background-color: red;
+.container-ingredienti {
+    background-color: $color-bg;
+    border:$glass-border;
+    padding: $space-lg;
 }
 
-.conservazione{
-    background-color: aqua;
+.preparazione {
+position: relative;
+top: 2.5rem;
+width: 90%;
+padding-left: 1rem;
 }

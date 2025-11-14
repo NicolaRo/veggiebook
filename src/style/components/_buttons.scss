@@ -63,7 +63,7 @@
   /// 
   /// 
 .bottone-chiudi-modale {
-  background: #ff000c29;
+  background: #ff000081;
   color: white;
   border: solid 2px #f3060630;
   border-radius: 12px;
@@ -74,37 +74,58 @@
   font-size: 0.75rem;
   width: fit-content;
   padding: 0.5rem;
-  top: 200%;
-  left: 80%;
+  top: 245%;
+  left: 82%;
   box-shadow: $glass-box-shadow;
 }
 
+.container-bottoni{
+display: flex;
+flex-direction: row;
+gap: 0.25rem;
+margin-top: 0.25rem;
+}
+
   .bottone-mostra-conservazione {
-    background:$color-primary;
-    color: $button-text;
-    border: none;
-    border-radius: $glass-radius;
-    cursor: pointer;
-    position: relative;
-    backdrop-filter: blur(10px);
-    font-weight: bolder;
-    font-size: 0.75rem;
-    height: fit-content;
-    padding: 0.5rem;
-    bottom: 8vh;
-    left: 32vh;
-    box-shadow: $glass-box-shadow;
+  position:relative;
+  background: #62c370;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  backdrop-filter: blur(10px);
+  font-size: 0.75rem;
+  height: fit-content;
+  padding: $space-sm;
+  box-shadow: $glass-box-shadow;
+  border:$glass-border;
   }
 
-
   .bottone-mostra-ingredienti {
-    background: #62c37061;
+  background: #62c370;;
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   backdrop-filter: blur(10px);
-  font-weight: bolder;
+  font-size: 0.75rem;
+  height: fit-content;
+  padding: 0.5rem;
+  position: relative;
+  width: fit-content;
+  top: -1008%;
+  left: 0;
+  box-shadow: $glass-box-shadow;
+  }
+
+  .bottone-preparazione {
+    background: #62c370;;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
   font-size: 0.75rem;
   height: fit-content;
   padding: 0.5rem;

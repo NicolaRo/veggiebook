@@ -47,20 +47,34 @@ export function SelectedRecipeModal({ recipe, onClose }) {
         {/* Contenitore collassabile per la lista degli ingredienti */}
         <div>
           <section>
-            <div className="container-btn-ingredienti">
+            <div className="container-bottoni">
               <button
                 className="bottone-mostra-ingredienti"
                 onClick={() => setShowIngredients(!showIngredients)}
               >
                 {showIngredients ? "Nascondi Ingredienti" : "Lista Ingredienti"}
               </button>
+              <button
+            className="bottone-preparazione"
+            onClick={() => setShowInstructions(!showInstructions)}
+          >
+            {showInstructions
+              ? "Nascondi Preparazione"
+              : "Mostra Preparazione"}
+          </button>
+          <button
+            className="bottone-mostra-conservazione"
+            onClick={() => setShowConservation(!showConservation)}
+          >
+            {showConservation ? "Nascondi Conservazione" : "Conservazione"}
+          </button>
             </div>
 
             {showIngredients && (
-              <ul>
+              <ul className="container-ingredienti">
                 {recipe.extendedIngredients?.map((item) => (
-                  <li key={item.id}>
-                    <img
+                  <li className="card-ingrediente" key={item.id}>
+                    <img className="immagine-ingrediente"
                       src={`https://spoonacular.com/cdn/ingredients_100x100/${item.image}`}
                       alt={item.name}
                     />
@@ -74,14 +88,7 @@ export function SelectedRecipeModal({ recipe, onClose }) {
 
         {/* Contenitore per la guida di preparazione (collassabile) */}
         <section className="preparazione">
-          <button
-            className="bottone-chiusura-modale"
-            onClick={() => setShowInstructions(!showInstructions)}
-          >
-            {showInstructions
-              ? "Nascondi Preparazione"
-              : "Mostra guida alla Preparazione"}
-          </button>
+          
           {showInstructions && (
             <div
               dangerouslySetInnerHTML={{
@@ -93,16 +100,11 @@ export function SelectedRecipeModal({ recipe, onClose }) {
 
         {/* Contenitore collassabile per la conservazione */}
         <section className="conservazione">
-          <button
-            className="bottone-mostra-conservazione"
-            onClick={() => setShowConservation(!showConservation)}
-          >
-            {showConservation ? "Nascondi Conservazione" : "Conservazione"}
-          </button>
+          
           {showConservation && (
             <p>
               Conserva in frigorifero per massimo 2 giorni in contenitore
-              ermetico. (testo segnaposto)
+              ermetico.
             </p>
           )}
         </section>

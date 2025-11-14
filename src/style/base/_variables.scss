@@ -9,7 +9,7 @@ $xl: 1440px;  // Extra large: monitor desktop
 // Palette colori
 $color-primary: #62c370;
 $color-accent: #397e43;
-$color-bg: linear-gradient(to bottom, rgba(248, 248, 248, 0.985), rgba(0, 128, 0, 0.99));
+$color-bg: linear-gradient(to bottom, rgba(248, 248, 248, 0.985), rgba(0, 128, 0, 0.343));
 $color-text: #1c1c1c;
 $button-text: #ffff;
 // Glassmorphism sul box shadow
@@ -19,7 +19,7 @@ $button-text: #ffff;
 // Glassmorphism (stile Apple)
 
 $glass-bg: rgba(255,255,255,0.14);   // sfondo vetro
-$glass-border: rgba(255,255,255,0.28);
+$glass-border: 1 px solid rgba(255,255,255,0.28);
 $glass-shadow: 0 6px 24px rgba(8, 30, 10, 0.12);
 $glass-radius: 12px;
 $glass-box-shadow: 
