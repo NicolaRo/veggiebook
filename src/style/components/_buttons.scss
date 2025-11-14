@@ -20,6 +20,7 @@
     cursor: pointer;
     max-height: fit-content;
     border: none;
+    box-shadow: $glass-box-shadow;
   }
 
   .recipe-button--random {
@@ -38,7 +39,7 @@
     bottom: 2rem;
     left: 3.5rem;
     border-radius: $glass-radius;
-    box-shadow:$box-shadow;
+    box-shadow:$glass-box-shadow;
   }
 
   .recipe-button--search {
@@ -55,6 +56,7 @@
     padding: 0.5rem;
     bottom: 8vh;
     left: 32vh;
+    box-shadow: $glass-box-shadow;
   }
 
   ////////////// Bottoni Modale ///////////////
@@ -74,6 +76,7 @@
   padding: 0.5rem;
   top: 200%;
   left: 80%;
+  box-shadow: $glass-box-shadow;
 }
 
   .bottone-mostra-conservazione {
@@ -89,7 +92,8 @@
     height: fit-content;
     padding: 0.5rem;
     bottom: 8vh;
-    left: 32vh;;
+    left: 32vh;
+    box-shadow: $glass-box-shadow;
   }
 
 
@@ -108,4 +112,5 @@
   width: fit-content;
   top: -1008%;
   left: 0;
+  box-shadow: $glass-box-shadow;
   }
