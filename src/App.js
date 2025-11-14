@@ -115,10 +115,8 @@ function App() {
             )}
       </div>
       <div className="footer">
-        <p class="footer-signature">
+        <p className="footer-signature">
           Disegnato e sviluppato da <strong>NicoDesign®</strong>
-          &
-          Powered by <a href="https://spoonacular.com/food-api">Spoonacular API</a>
         </p>
         <div className="container-socials">
           <a href="https://nicolaro.github.io/" target="_blank" rel="noopener noreferrer">
@@ -135,6 +133,10 @@ function App() {
               id="github-logo" 
               alt="Nicola Rossi GitHub profile"/>
           </a>
+          <p>
+          | & |
+          supportato dal servizio API di <a href="https://spoonacular.com/food-api">Spoonacular</a>
+          </p>
         </div>
       </div>
     </React.Fragment>
