@@ -1,26 +1,34 @@
 @import '../base/variables';
 
 .overlay-modale {
-position: relative;
-width: 100%;
-padding: 0.5rem;
-background-image: $color-bg;
+    position: fixed;  // ← NON relative!
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7); // overlay scuro
+    z-index: 1000; // sopra tutto!
+    overflow-y: auto; // scroll se serve
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; // o center
+    padding: 2rem;
+
 }
 
 
 .contenitore-principale {
-position: relative;
-background: linear-gradient(to bottom, rgba(248, 248, 248, 0.985), rgba(0, 128, 0, 0.99));
-padding: 1rem;
-width: 100%;
-min-width: 100vw;
-top:50%;
+    position: relative; // ← NON fixed!
+    background: white;
+    width: 100vw;
+    border-radius: 8px;
+    margin: auto; // centra verticalmente se serve
+    padding: 0.5rem;
 }
 
 .titolo-ricetta-modale{
 position: relative;
-top: 3.5rem;
-left: 0.5rem;
+top: 4.2rem;
 background-color: $glass-bg;
 backdrop-filter: blur(20px);
 color: $color-text;
@@ -38,6 +46,7 @@ padding: $space-xs;
 border-radius: $glass-radius;
 box-shadow: $glass-box-shadow;
 }
+
 .description {
 position: relative;
 width: 100%;
@@ -65,9 +74,9 @@ box-shadow: $glass-box-shadow;
 }
 
 .container-ingredienti {
-    background-color: $color-bg;
-    border:$glass-border;
-    padding: $space-lg;
+background-color: $color-bg;
+border:$glass-border;
+padding: $space-lg;
 }
 
 .preparazione {
@@ -75,4 +84,8 @@ position: relative;
 top: 2.5rem;
 width: 90%;
 padding-left: 1rem;
+}
+.conservazione {
+position:relative;
+margin-top:20%;
 }

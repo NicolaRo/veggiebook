@@ -9,7 +9,6 @@
     max-height: fit-content;
   }
 
-
   .search-button{
     background: #62c370;
     color: white;
@@ -30,14 +29,14 @@
     border: none;
     border-radius: $glass-radius;
     cursor: pointer;
-    position: relative;
+    position: absolute;
     font-weight: bolder;
     font-size: 0.75rem;
     height: fit-content;
     width:fit-content;
     padding: 0.5rem;
-    bottom: 2rem;
-    left: 3.5rem;
+    bottom: 0rem;
+    left: 4.5rem;
     border-radius: $glass-radius;
     box-shadow:$glass-box-shadow;
   }
@@ -49,13 +48,13 @@
     border-radius: $glass-radius;
     cursor: pointer;
     position: relative;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     font-weight: bolder;
     font-size: 1.5rem;
     height: fit-content;
     padding: 0.5rem;
-    bottom: 8vh;
-    left: 32vh;
+    bottom: 1vh;
+    left: 28vh;
     box-shadow: $glass-box-shadow;
   }
 

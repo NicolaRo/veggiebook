@@ -1,22 +1,17 @@
 .search-results-container {
     position: relative;
-    top: 15vh;
+    top: 5vh;
+    justify-items: center;
+  width: 100vw;
 }
 
-.search-result-container {
-    padding-top: 5%;
-    background-image: linear-gradient(to bottom, rgba(248, 248, 248, 0), rgba(0, 128, 0, 0.3490196078));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position:relative;
-  }
   .recipe-card--search{
     margin-bottom: 2%;
-    background: aqua;
-    height: 45vh;
-    width: 95%;
+    background-image: $color-bg;
+    height: 100%;
+    width: 100%;
     margin-bottom: 2rem;
+    border-radius: $glass-border;
   }
   .recipe-image--search {
     width: 100%;
@@ -36,7 +31,7 @@
     max-width: 90%;
     padding: 0.5rem;
     overflow-x: scroll;
-    top: 5vh;
+    top: 1%;
   }
   
   .recipe-time--search {
@@ -50,5 +45,5 @@
     background: rgba(255, 255, 255, 0.2);
     padding: 0.5rem;
     width: fit-content;
-    bottom: 8vh;
+    bottom: -2vh;
   }

@@ -79,8 +79,9 @@ width: 85%;
 }
 
 .recipe-time--random{
-position: absolute;
-bottom: 65%;
+position: relative;
+width: fit-content;
+bottom: 15%;
 left: 5%;
 right: 1 rem;
 background-color:$glass-bg;
