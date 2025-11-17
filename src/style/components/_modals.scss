@@ -56,7 +56,7 @@ border-radius: $glass-radius;
 
 }
 /////////////// Dettagli ricetta ///////////////////
- 
+
 .container-ingredienti{
 margin-top:$space-lg;
 display: flex;
@@ -73,7 +73,14 @@ border:$glass-border;
 padding: $space-lg;
 }
 
+.card-ingrediente {
+    list-style: none;
+    margin: $space-sm;
+}
 
+.immagine-ingrediente {
+    margin-bottom:$space-lg;
+}
 .preparazione {
 position: relative;
 top: 2.5rem;

@@ -20,21 +20,32 @@
 //  Global Reset / Base Setup
 // ============================
 * {
-  box-sizing: border-box; // padding e border siano inclusi nella larghezza/altezza dell’elemento
-  // Metto i seguenti valori a "0" per non farli interferire con quelli di default del browser 
-  margin: 0;
-  padding: 0;
+box-sizing: border-box; // padding e border siano inclusi nella larghezza/altezza dell’elemento
+// Metto i seguenti valori a "0" per non farli interferire con quelli di default del browser 
+margin: 0;
+padding: 0;
 }
 
 
-.App {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100vw;
-  overflow-x: hidden;
+.App { // base mobile-first (sotto 480px)
+display:flex;
+flex-direction: column;
+align-items: center;
+gap: $space-md;
+width: 100vw;
+overflow-x: hidden; 
+  @include respond(md) { // larghezza minima (≥768px)
+    
+  }
+  @include respond (lg) {// larghezza minima (≥1024px)
+
+  }
+  @include respond (xl){ // larghezza minima (≥1440px)
+
+  }
 }
+
+
 
 .logo-container{
 display: flex;
@@ -45,43 +56,84 @@ padding: 2rem;
 }
 
 .logo-veggiebook {
-  max-width: 100px;
-  max-height: 100px;
+max-width: 100px;
+max-height: 100px;
+  
+@include respond(md) { // larghezza minima (≥768px)
+    max-width: 200px;
+    max-height: 200px;
+  }
+  @include respond (lg) {// larghezza minima (≥1024px)
+    max-width: 250px;
+    max-height: 250px;
+  }
+  @include respond (xl){ // larghezza minima (≥1440px)
+    max-width: 400px;
+    max-height: 400px;
+  }
+
 }
 
 h1 {
-  text-align: center;
+text-align: center;
+font-size: 1.5rem;
+
+@include respond(md) { // larghezza minima (≥768px)
+  font-size: 2rem;
+}
+@include respond (lg) {// larghezza minima (≥1024px)
+  font-size: 2.5rem;
+}
+@include respond (xl){ // larghezza minima (≥1440px)
+  font-size: 3.5rem;
+}
+
 }
 
 .footer {
-  background-color:rgba(0, 128, 0, 0.607);
-  position:relative;
-  bottom:0;
-  width: 100vw;
-  padding: 2%;
-  margin-top: 5%;
-  border-top-right-radius:12px ;
-  border-top-left-radius:12px ;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+background-color:rgba(0, 128, 0, 0.607);
+position:relative;
+bottom:0;
+width: 100vw;
+padding: 2%;
+margin-top: 5%;
+border-top-right-radius:12px ;
+border-top-left-radius:12px ;
+align-items: center;
+display: flex;
+flex-direction: column;
 }
 
 .container-socials{
-  width: auto;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  padding: $space-sm;
-  align-items: center;
-  margin: $space-sm;
+width: auto;
+height: 40px;
+display: flex;
+flex-direction: row;
+padding: $space-sm;
+align-items: center;
+margin: $space-sm;
 }
 
 .social-icon {
-  position: relative;
-  display: grid;
-  margin: $space-lg;
-  width: 40px;
-  height: 40px;
-  align-items: center;
+position: relative;
+display: grid;
+margin: $space-xs;
+width: 20px;
+height: 20px;
+align-items: center;
+  @include respond(md) { // larghezza minima (≥768px)
+    width: 30px;
+    height: 30px;
+    margin: $space-sm;
+  }
+  @include respond (lg) {// larghezza minima (≥1024px)
+    max-width: 40px;
+    max-height: 40px;
+    margin: $space-md;
+  }
+  @include respond (xl){ // larghezza minima (≥1440px)
+    max-width: 50px;
+    max-height: 50px;
+    margin: $space-xl;
+  }
 }
