@@ -1,29 +1,27 @@
 @import '../base/variables';
 
 .overlay-modale {
-    position: fixed;  // ← NON relative!
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7); // overlay scuro
-    z-index: 1000; // sopra tutto!
-    overflow-y: auto; // scroll se serve
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; // o center
-    padding: 2rem;
-
+position: fixed;  // NON relative (lo facciamo stare al di sopra di tutto)
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background: rgba(0, 0, 0, 0.7); // overlay scuro è una best practice per i modali
+z-index: 1000; 
+overflow-y: auto; 
+display: flex;
+justify-content: center;
+align-items: flex-start; 
+padding: 2rem;
 }
 
-
 .contenitore-principale {
-    position: relative; // ← NON fixed!
-    background: white;
-    width: 100vw;
-    border-radius: 8px;
-    margin: auto; // centra verticalmente se serve
-    padding: 0.5rem;
+position: relative; 
+background-image: $color-bg;
+width: 100vw;
+border-radius: 8px;
+margin: auto;
+padding: 0.5rem;
 }
 
 .titolo-ricetta-modale{
@@ -57,8 +55,8 @@ margin-top: 35px;
 border-radius: $glass-radius;
 
 }
-/////////////// lista ingredienti
-/// 
+/////////////// Dettagli ricetta ///////////////////
+ 
 .container-ingredienti{
 margin-top:$space-lg;
 display: flex;
@@ -71,13 +69,10 @@ padding:$space-lg;
 text-decoration: none;
 border-radius: 12px;
 box-shadow: $glass-box-shadow;
-}
-
-.container-ingredienti {
-background-color: $color-bg;
 border:$glass-border;
 padding: $space-lg;
 }
+
 
 .preparazione {
 position: relative;

@@ -57,18 +57,31 @@ h1 {
   background-color:rgba(0, 128, 0, 0.607);
   position:relative;
   bottom:0;
-  height:fit-content;
   width: 100vw;
   padding: 2%;
   margin-top: 5%;
   border-top-right-radius:12px ;
   border-top-left-radius:12px ;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.social-icon{
-  width: 40px;
+.container-socials{
+  width: auto;
+  height: 40px;
   display: flex;
   flex-direction: row;
   padding: $space-sm;
+  align-items: center;
+  margin: $space-sm;
+}
+
+.social-icon {
+  position: relative;
+  display: grid;
+  margin: $space-lg;
+  width: 40px;
+  height: 40px;
   align-items: center;
 }

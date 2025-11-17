@@ -115,7 +115,7 @@ function App() {
             )}
       </div>
       <div className="footer">
-        <p className="footer-signature">
+        <p className="ft-signature">
           Disegnato e sviluppato da <strong>NicoDesign®</strong>
         </p>
         <div className="container-socials">
@@ -127,17 +127,20 @@ function App() {
               alt="Nicola Rossi DevPortfolio"/>
           </a>
           <a href="https://github.com/NicolaRo" target="_blank" rel="noopener noreferrer">
-            <img 
+            <img
               src="img/social-icon/Github-Logo-Black.png"
               className="social-icon" 
               id="github-logo" 
               alt="Nicola Rossi GitHub profile"/>
           </a>
-          <p>
+          
+        </div>
+        <p>
           | & |
+          </p>
+          <p>
           supportato dal servizio API di <a href="https://spoonacular.com/food-api">Spoonacular</a>
           </p>
-        </div>
       </div>
     </React.Fragment>
   );
