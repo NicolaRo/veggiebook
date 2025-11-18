@@ -46,33 +46,33 @@
   border: none;
   border-radius: $glass-radius;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   font-weight: bolder;
   font-size: 0.75rem;
   height: fit-content;
   width:fit-content;
   padding: 0.5rem;
-  bottom: 0rem;
+  bottom: 4rem;
   left: 6.5rem;
   border-radius: $glass-radius;
   box-shadow:$glass-box-shadow;
 
   @include respond(md) { // larghezza minima (≥768px)
     padding: 0.5rem;
-    bottom: 0.4rem;
-    left: 15.5rem;
+    bottom: 5.5rem;
+    left: 10rem;
     font-size: 1rem;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
     padding: 0.5rem;
-    bottom: 0.4rem;
-    left: 15.5rem;
+    bottom: 6.5rem;
+    left: 12.2rem;
     font-size: 1rem;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
     padding: 0.5rem;
-    bottom: 0.4rem;
-    left: 19rem;
+    bottom: 7.4rem;
+    left: 13rem;
     font-size: 1.3rem;
   }
 }

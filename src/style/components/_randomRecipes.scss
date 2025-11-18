@@ -1,7 +1,6 @@
 .random-recipes-cards-container{
 display: flex;
 flex-direction: row;
-gap: 1rem;
 }
 
 .recipe-card--random {
@@ -12,21 +11,28 @@ gap: 1rem;
   border-radius: $glass-radius;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   padding: 0;
+  bottom: -10%;
+  
   @include respond(md) { // larghezza minima (≥768px)
     min-width: 36vh;
     width: 40vh;
     height: 30vh;
     padding: 0;
+    bottom: 0rem;
+    margin-left: 5.5rem;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
     min-width: 36vh;
     height: 30vh;
-    padding: 0;
+    bottom: -3rem;
+    margin-left: 5.5rem;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
-    min-width: 36vh;
-    height: 30vh;
+    min-width: 46vh;
+    height: 40vh;
     padding: 0;
+    margin-left: 5%;
+    bottom: -3rem;
   }
 }
   
@@ -36,7 +42,8 @@ gap: 1rem;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 2rem;
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
   width: 100vw;
   padding: 0 1rem;
   background-image: linear-gradient(to bottom,azure,#62c370);
@@ -73,21 +80,33 @@ border-radius: $glass-radius;
 padding: 0.5rem;
 font-size: 0.90rem;
 width: 85%;
+  overflow: scroll; // Abilito lo scroll per l'overflow
+  text-overflow: ellipsis; // Imposto il text-overflow
+  white-space: nowrap; // Lo dispongo su unica fila così si può scrollare per leggere titoli lunghi.
 
 @include respond(md) { // larghezza minima (≥768px)
   padding: 0.5rem;
   font-size: 1.2rem;
   width: 92%;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @include respond (lg) {// larghezza minima (≥1024px)
   padding: 0.5rem;
   font-size: 1.5rem;
   width: 92%;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 @include respond (xl){ // larghezza minima (≥1440px)
   padding: 0.7rem;
   font-size: 2rem;
-  width: 94%;
+  width: 95%;
+  overflow: scroll;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 }
@@ -109,21 +128,23 @@ font-size: 12px;
 
   @include respond(md) { // larghezza minima (≥768px)
     bottom: 75%;
-    left: -107%;
+    left: 3%;
     padding: 0.45rem;
     font-size: 0.85rem;
     height:fit-content;
-    
+    margin-top: 1rem;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
-    bottom: 65%;
-    left: -105%;
+    bottom: 85%;
+    left: 2%;
     padding: 0.55rem;
-    font-size: 1rem;
+    font-size: 0.85rem;
     height:fit-content;
-    
+    margin-top: 1.5rem;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
-  height:fit-content;
+    height:fit-content;
+    margin-top: 2rem;
+    left: 0.75rem;
   }
 }
