@@ -34,8 +34,19 @@ box-shadow: $glass-box-shadow;
 border: $glass-border;
 border-radius: $glass-radius;
 padding: $space-sm;
-font-size: 0.9rem;
+font-size: 1rem;
 width: fit-content;
+
+@include respond(md) { // larghezza minima (≥768px)
+    font-size: 1.5rem;
+  }
+  @include respond (lg) {// larghezza minima (≥1024px)
+    font-size: 2rem;
+  }
+  @include respond (xl){ // larghezza minima (≥1440px)
+    font-size: 2.3rem;
+  }
+
 }
 
 .immagine-ricetta-modale{
@@ -74,8 +85,40 @@ padding: $space-lg;
 }
 
 .card-ingrediente {
-    list-style: none;
+list-style: none;
+margin: $space-sm;
+list-style: none;
+margin: $space-lg;
+text-align: left;
+font-size: 0.8rem;
+
+    @include respond(md) { // larghezza minima (≥768px)
+        margin: $space-xs;
+        font-size: 1rem;
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+        margin: $space-lg;
+        font-size: 1.5rem;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+        margin: $space-xl;
+        font-size: 2rem;
+    }
+}
+
+.immagine-ingrediente {
+margin-bottom: 2rem;
+
+@include respond(md) { // larghezza minima (≥768px)
+    width: 50px;
+}
+@include respond (lg) {// larghezza minima (≥1024px)
     margin: $space-sm;
+    font-size: 1rem;
+}
+@include respond (xl){ // larghezza minima (≥1440px)
+    margin: $space-md
+}
 }
 
 .immagine-ingrediente {
