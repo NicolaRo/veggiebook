@@ -26,7 +26,6 @@ padding: 0.5rem;
 
 .titolo-ricetta-modale{
 position: relative;
-top: 4.2rem;
 background-color: $glass-bg;
 backdrop-filter: blur(20px);
 color: $color-text;
@@ -34,26 +33,41 @@ box-shadow: $glass-box-shadow;
 border: $glass-border;
 border-radius: $glass-radius;
 padding: $space-sm;
+margin: $space-sm;
 font-size: 1rem;
 width: fit-content;
 
-@include respond(md) { // larghezza minima (≥768px)
-    font-size: 1.5rem;
-  }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    font-size: 2rem;
-  }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    font-size: 2.3rem;
-  }
-
+    @include respond(md) { // larghezza minima (≥768px)
+        font-size: 1.5rem;
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+        font-size: 2rem;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+        font-size: 2.3rem;
+    }
 }
 
 .immagine-ricetta-modale{
 width: 100%;
+position: relative;
+top: 10%;
 padding: $space-xs;
 border-radius: $glass-radius;
 box-shadow: $glass-box-shadow;
+
+    @include respond(md) { // larghezza minima (≥768px)
+        width: 75%;
+        top: 20%;
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+        width: 55%;
+        top: 25%;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+        width: 55%;
+        top: 10%;
+    }
 }
 
 .description {

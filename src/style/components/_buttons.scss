@@ -89,9 +89,25 @@
   font-size: 1.5rem;
   height: fit-content;
   padding: 0.5rem;
-  bottom: 1vh;
-  left: 28vh;
+  bottom: 15%;
+  left: 65%;
   box-shadow: $glass-box-shadow;
+
+  @include respond(md) { // larghezza minima (≥768px)
+    font-size: 1.5rem;
+    top: -15%;
+    left: 80%;   
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+    font-size: 2rem;
+    top: -15%;
+    left: 80%;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+    font-size: 2.5rem;
+    top: -15%;
+    left: 81%;
+  }
 }
 
 ////////////// Bottoni Modale ///////////////
