@@ -30,7 +30,7 @@ function RecipeCard({ recipe, styleType = "random", onViewRecipe }) {
         className={`recipe-image recipe-image--${styleType}`}
       />
 
-       {/* Poi l'immagine della ricetta */}
+       {/* Poi il titolo della ricetta */}
       <h3 className={`recipe-title recipe-title--${styleType}`}>
         {recipe.title}
       </h3>
