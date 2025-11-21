@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# 🥗 VeggieBook
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean, lightweight **React** app with a smooth **glassmorphism-friendly** UI.
 
-## Available Scripts
+Live Demo: **[https://veggiebook.netlify.app/](https://veggiebook.netlify.app/)**
+Hosting: **Netlify** 🚀
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ⚡ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **React** (Create React App)
+* **Custom CSS** with glassmorphism effects
+* **Netlify** for continuous deployment
+* **Spoonacular** provided API Service that's the core of the App functioning
+* **Custom filters** has been used to only gather vegetarian recipes when handling the API Call to the Spoonacular service.
+* **Axios** handle the API call 
+* **React Hooks** to take advantage from React's great potential
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ▶️ Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Development mode
 
-### `npm run build`
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs the app at `http://localhost:3000/` with hot reload.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm test
+```
 
-### `npm run eject`
+Launches the interactive test runner.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Production build
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Creates an optimized production build inside the `build/` folder.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📦 Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The production build is automatically deployed via **Netlify**.
+Live site:
+👉 [https://veggiebook.netlify.app/](https://veggiebook.netlify.app/)
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🖼️ App Screenshots
 
-### Analyzing the Bundle Size
+*(Drop your screenshots here whenever you’re ready — I can help format them!)*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
