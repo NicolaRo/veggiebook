@@ -57,7 +57,7 @@ Live site:
 ---
 
 ## 🖼️ App Screenshots
-
-*(Drop your screenshots here whenever you’re ready — I can help format them!)*
+<img width="501" height="786" alt="Screenshot 2025-11-21 alle 14 04 48" src="https://github.com/user-attachments/assets/423241fd-1a8e-4104-aa9b-84bb2ff7745b" />
+ 
 
 ---
