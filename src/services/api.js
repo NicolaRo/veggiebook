@@ -104,9 +104,7 @@ export async function searchRecipes(query) {  // Riceve la query come parametro
     console.error("Errore nella ricerca:", error);
     throw error;
   }
-
 }
-
 
 export async function getRecipeDetails(id) {
   const fullUrl = `${baseUrl}/recipes/${id}/information?apiKey=${apiKey}`;
