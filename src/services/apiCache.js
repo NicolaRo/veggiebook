@@ -1,11 +1,11 @@
 // apiCache.js
 // ==================================================================
-// SOLUZIONE TEMPORANEA: Cache in memoria per risparmiare chiamate API
+// OBBIETTIVO EFFICIENZA: Cache in memoria per risparmiare chiamate API
 // ==================================================================
 // Come funziona:
-// 1. Quando fai una chiamata API, il risultato viene salvato in un oggetto
-// 2. Se richiami la stessa funzione, ti restituisce il dato salvato
-// 3. Quando CHIUDI il browser, la cache viene cancellata
+// 1. Quando fà una chiamata API, il risultato viene salvato in un oggetto
+// 2. Se richiamo la stessa funzione, viene restituito il dato salvato
+// 3. Quando CHIUDO il browser, la cache viene cancellata
 // 4. Per svuotare manualmente: apri console e scrivi > sessionStorage.clear()
 
 // Oggetto che conterrà tutti i dati cachati
