@@ -1,6 +1,7 @@
 // File principale in cui vive tutta l'App
 // Importo i componenti necessari
 import React from "react";
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import "./style/main.scss";
 import SearchResults from "./components/searchResults.jsx";
 import {
@@ -8,25 +9,23 @@ import {
   getRandomMaincourse,
   getRandomDessert,
   searchRecipes,
-  getRecipeDetails,
 } from "./services/api";
 import { useEffect, useState } from "react";
 import { SearchBar } from "./components/searchbar";
 import { RandomRecipes } from "./components/randomRecipes.jsx";
-import SelectedRecipeModal from "./components/SelectedRecipeModal.jsx";
 import {
   getCachedRandomRecipe,
   getCachedSearch,
-  getCachedRecipeDetails,
 } from "./services/apiCache";
+import { RecipeDetails } from "./pages/recipeDetails.jsx";
 
 function App() {
   // Stati per le 3 ricette random
   const [appetizer, setAppetizer] = useState(null);
   const [maincourse, setMaincourse] = useState(null);
   const [dessert, setDessert] = useState(null);
-  const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const [hasSearched, setHasSearched] = useState(false);
 
   // Nuovo stato per i risultati della ricerca
   const [searchResults, setSearchResults] = useState([]);
@@ -52,10 +51,12 @@ function App() {
   // Funzione che gestisce la ricerca con cache
   async function handleSearch(query) {
     setIsLoading(true);
+    setHasSearched(true);
     try {
       const results = await getCachedSearch(searchRecipes, query);
       setSearchResults(results);
       console.log("Risultati trovati:", results);
+      navigate("/");
     } catch (error) {
       console.error("Errore nella ricerca:", error);
       alert("Errore durante la ricerca. Riprova.");
@@ -65,14 +66,9 @@ function App() {
   }
 
   // Funzione per visualizzare dettagli ricetta con cache
-  async function handleViewRecipe(id) {
-    try {
-      const details = await getCachedRecipeDetails(getRecipeDetails, id);
-      setSelectedRecipe(details);
-      setIsModalOpen(true);
-    } catch (error) {
-      console.error("Errore nel caricamento dei dettagli:", error);
-    }
+  function handleViewRecipe(id) {
+    navigate(`/ricetta/${id}`);
+
   }
 
   return (
@@ -89,7 +85,11 @@ function App() {
 
             <SearchBar onSearch={handleSearch} isLoading={isLoading} />
 
-            <div className="random-recipes-header">
+            {/*Route Homepage */}
+            <Routes>
+              <Route path="/" element={
+                <>
+                <div className="random-recipes-header">
               <h3>Cerchi ispirazione?👩🏻‍🍳</h3>
             </div>
 
@@ -99,20 +99,20 @@ function App() {
               dessert={dessert}
               onViewRecipe={handleViewRecipe}
             />
-
-            {searchResults.length > 0 && (
+            
+            {hasSearched && (
               <SearchResults
                 results={searchResults}
                 onViewRecipe={handleViewRecipe}
               />
             )}
+          </>
+        } />
 
-            {isModalOpen && selectedRecipe && (
-              <SelectedRecipeModal
-                recipe={selectedRecipe}
-                onClose={() => setIsModalOpen(false)}
-              />
-            )}
+              <Route path="/ricetta/:id" element={<RecipeDetails />} />
+
+            </Routes>
+            
       </div>
       <div className="footer">
         <p className="ft-signature">
