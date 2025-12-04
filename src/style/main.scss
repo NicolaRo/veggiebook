@@ -56,16 +56,16 @@ padding: 2rem;
 }
 
 .logo-veggiebook {
-max-width: 100px;
-max-height: 100px;
+max-width: 200px;
+max-height: 200px;
   
 @include respond(md) { // larghezza minima (≥768px)
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 300px;
+    max-height: 300px;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 350px;
+    max-height: 350px;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
     max-width: 400px;
@@ -76,16 +76,16 @@ max-height: 100px;
 
 h1 {
 text-align: center;
-font-size: 1.5rem;
+font-size: 3rem;
 
 @include respond(md) { // larghezza minima (≥768px)
-  font-size: 2rem;
+  font-size: 4rem;
 }
 @include respond (lg) {// larghezza minima (≥1024px)
-  font-size: 2.5rem;
+  font-size: 5rem;
 }
 @include respond (xl){ // larghezza minima (≥1440px)
-  font-size: 3.5rem;
+  font-size: 6rem;
 }
 
 }
@@ -94,8 +94,9 @@ font-size: 1.5rem;
 background-color:rgba(0, 128, 0, 0.607);
 position:relative;
 bottom:0;
-width: 100vw;
-padding: 2%;
+width: 100%;
+height: fit-content;
+padding: $space-md;
 margin-top: 5%;
 border-top-right-radius:12px ;
 border-top-left-radius:12px ;
@@ -106,34 +107,35 @@ flex-direction: column;
 
 .container-socials{
 width: auto;
-height: 40px;
+height: fit-content;
 display: flex;
 flex-direction: row;
 padding: $space-sm;
 align-items: center;
-margin: $space-sm;
+margin: $space-md;
+gap: $space-sm;
 }
 
 .social-icon {
 position: relative;
-display: grid;
+display: flex;
 margin: $space-xs;
-width: 20px;
+width: auto;
 height: 20px;
 align-items: center;
   @include respond(md) { // larghezza minima (≥768px)
-    width: 30px;
+    width: auto;
     height: 30px;
     margin: $space-sm;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
-    max-width: 40px;
+    max-width: auto;
     max-height: 40px;
     margin: $space-md;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
-    max-width: 50px;
-    max-height: 50px;
-    margin: $space-xl;
+    max-width: auto;
+    max-height: 40px;
+    margin: $space-lg;
   }
 }

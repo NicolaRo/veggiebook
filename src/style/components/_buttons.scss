@@ -13,8 +13,9 @@
   background: #62c370;
   color: white;
   font-weight: 800;
+  font-size: 1.5rem;
   border: solid 2px rgba(233, 243, 233, 0.511);
-  padding: 0.5rem;
+  padding: 1%;
   border-radius: 6px;
   cursor: pointer;
   max-height: fit-content;
@@ -22,18 +23,15 @@
   box-shadow: $glass-box-shadow;
 
   @include respond(md) { // larghezza minima (≥768px)
-    padding: 0.8rem;
-    font-size: 20px;
+    font-size: 1.9rem;
     font-weight: 800;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
-    padding: 1rem;
-    font-size: 22px;
+    font-size: 1.9rem;
     font-weight: 900;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
-    padding: 1.5rem;
-    font-size: 25px;
+    font-size: 1.9rem;
     font-weight: 1000;
   }
 
@@ -110,75 +108,33 @@
   }
 }
 
-////////////// Bottoni Modale ///////////////
+////////////// Bottoni Ricetta ///////////////
 /// 
 /// 
-.bottone-chiudi-modale {
-background: #ff000081;
-color: white;
-border: solid 2px #f3060630;
-border-radius: 12px;
-cursor: pointer;
-position: relative;
-backdrop-filter: blur(20px);
-font-weight: bolder;
-font-size: 0.75rem;
-width: fit-content;
-padding: 0.5rem;
-top: 245%;
-left: 82%;
-box-shadow: $glass-box-shadow;
-
-  @include respond(md) { // larghezza minima (≥768px)
-    font-weight: bolder;
-    font-size: 1rem;
-    padding: $space-md;
-    top: 15%;
-    left: 85%;
-  }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    font-weight: bolder;
-    font-size: 1.5rem;
-    padding: $space-md;
-    top: 20%;
-    left: 88%;
-  }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    font-weight: bolder;
-    font-size: 1.5rem;
-    padding: $space-md;
-    top: 25%;
-    left: 91%;
-  }
-}
 
 .container-bottoni{
 display: flex;
 flex-direction: row;
-gap: 0.25rem;
-margin-top: 0.25rem;
+gap: $space-lg;
+margin-top: $space-lg;
 padding: $space-xs;
+justify-content: center;
+margin-bottom: $space-lg;
 
   @include respond(md) { // larghezza minima (≥768px)
-    gap: $space-sm;
-    margin-top: $space-sm;
-    padding: $space-sm;
+    gap: $space-lg;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
-    gap: $space-md;
-    margin-top: $space-md;
-    padding: $space-md;
+    gap: $space-lg;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
     gap: $space-xl;
-    margin-top: $space-lg;
-    padding: $space-lg;
   }
 }
 
 .bottone-mostra-conservazione {
 position:relative;
-background: #62c370;
+background: $color-primary;
 color: white;
 border: none;
 border-radius: 12px;
@@ -186,6 +142,7 @@ cursor: pointer;
 position: relative;
 backdrop-filter: blur(10px);
 font-size: 0.75rem;
+font-weight: 800;
 height: fit-content;
 padding: $space-sm;
 box-shadow: $glass-box-shadow;
@@ -193,15 +150,15 @@ border:$glass-border;
 
   @include respond(md) { // larghezza minima (≥768px)
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 900;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 900;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 1000;
   }
 }
 
@@ -220,18 +177,18 @@ width: fit-content;
 top: -1008%;
 left: 0;
 box-shadow: $glass-box-shadow;
-  @include respond(md) { // larghezza minima (≥768px)
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    font-size: 2rem;
-    font-weight: 800;
-  }
+@include respond(md) { // larghezza minima (≥768px)
+  font-size: 1rem;
+  font-weight: 900;
+}
+@include respond (lg) {// larghezza minima (≥1024px)
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+@include respond (xl){ // larghezza minima (≥1440px)
+  font-size: 2rem;
+  font-weight: 1000;
+}
 }
 
 .bottone-preparazione {
@@ -249,16 +206,16 @@ width: fit-content;
 top: -1008%;
 left: 0;
 box-shadow: $glass-box-shadow;
-  @include respond(md) { // larghezza minima (≥768px)
-    font-size: 1rem;
-    font-weight: 400;
-  }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    font-size: 2rem;
-    font-weight: 800;
-  }
+@include respond(md) { // larghezza minima (≥768px)
+  font-size: 1rem;
+  font-weight: 900;
+}
+@include respond (lg) {// larghezza minima (≥1024px)
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+@include respond (xl){ // larghezza minima (≥1440px)
+  font-size: 2rem;
+  font-weight: 1000;
+}
 }

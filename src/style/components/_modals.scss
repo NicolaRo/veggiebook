@@ -1,28 +1,20 @@
 @import '../base/variables';
 
-.overlay-modale {
-position: fixed;  // NON relative (lo facciamo stare al di sopra di tutto)
+.recipe-detail-container {
+position: relative; 
 top: 0;
 left: 0;
-width: 100vw;
-height: 100vh;
-background: rgba(0, 0, 0, 0.7); // overlay scuro è una best practice per i modali
-z-index: 1000; 
+width: 100%;
+height: fit-content;
+background-image: $color-bg;
 overflow-y: auto; 
 display: flex;
 justify-content: center;
 align-items: flex-start; 
-padding: 2rem;
+padding: 3rem;
+margin-top: $space-xl;
 }
 
-.contenitore-principale {
-position: relative; 
-background-image: $color-bg;
-width: 100vw;
-border-radius: 8px;
-margin: auto;
-padding: 0.5rem;
-}
 
 .titolo-ricetta-modale{
 position: relative;
@@ -49,100 +41,84 @@ width: fit-content;
 }
 
 .immagine-ricetta-modale{
-width: 100%;
-position: relative;
-top: 10%;
-padding: $space-xs;
-border-radius: $glass-radius;
-box-shadow: $glass-box-shadow;
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: 300px;
+    border-radius: $glass-radius;
+    border: $glass-border;
+    box-shadow: $glass-box-shadow;
 
-    @include respond(md) { // larghezza minima (≥768px)
-        width: 75%;
-        top: 20%;
+    @include respond(md) {
+        width: auto;
+        height: 400px;
     }
-    @include respond (lg) {// larghezza minima (≥1024px)
-        width: 55%;
-        top: 25%;
-    }
-    @include respond (xl){ // larghezza minima (≥1440px)
-        width: 55%;
-        top: 10%;
+    @include respond(lg) {
+        width: auto;
+        height: 400px;
     }
 }
 
 .description {
 position: relative;
 width: 100%;
-padding: $space-xs;
+padding: $space-lg;
 background-color: $glass-bg;
 backdrop-filter: blur(20px);
-margin-top: 35px;
+margin-top: $space-md;
 border-radius: $glass-radius;
+border: $glass-border;
+color: $color-text;
 
 }
 /////////////// Dettagli ricetta ///////////////////
 
-.container-ingredienti{
-margin-top:$space-lg;
+.container-ingredienti {
+position: relative;
+align-items: center;
+overflow-x: auto;
+margin-top: $space-lg;
 display: flex;
 flex-direction: row;
-overflow: scroll;
-width: 100%;
-gap:$space-xs;
-background-color: $glass-bg;
-padding:$space-lg;
-text-decoration: none;
-border-radius: 12px;
+gap: $space-md;
+background-color: white;
+width: 90%;
+max-width: 900px;
+margin: 0 auto;
+    
+/* Azzerare padding e margin del UL */
+padding: $space-sm 0;
+margin: 0;
+list-style: none;
+
+border-radius: $glass-radius;
 box-shadow: $glass-box-shadow;
-border:$glass-border;
-padding: $space-lg;
+border: $glass-border;
+
+min-width: 0;  // serve per evitare overflow extra
 }
+
 
 .card-ingrediente {
-list-style: none;
-margin: $space-sm;
-list-style: none;
-margin: $space-lg;
-text-align: left;
-font-size: 0.8rem;
-
-    @include respond(md) { // larghezza minima (≥768px)
-        margin: $space-xs;
-        font-size: 1rem;
-    }
-    @include respond (lg) {// larghezza minima (≥1024px)
-        margin: $space-lg;
-        font-size: 1.5rem;
-    }
-    @include respond (xl){ // larghezza minima (≥1440px)
-        margin: $space-xl;
-        font-size: 2rem;
-    }
-}
-
-.immagine-ingrediente {
-margin-bottom: 2rem;
-
-@include respond(md) { // larghezza minima (≥768px)
-    width: 50px;
-}
-@include respond (lg) {// larghezza minima (≥1024px)
+    flex: 0 0 140px; // larghezza fissa perfetta per scroll
+    list-style: none;
     margin: $space-sm;
-    font-size: 1rem;
-}
-@include respond (xl){ // larghezza minima (≥1440px)
-    margin: $space-md
-}
+    text-align: left;
+    font-size: 0.9rem;
 }
 
 .immagine-ingrediente {
-    margin-bottom:$space-lg;
+    display: block;
+    margin: 0 auto $space-xs;
+    width: 80px;
+    height: auto;
 }
+
 .preparazione {
 position: relative;
 top: 2.5rem;
-width: 90%;
-padding-left: 1rem;
+width: auto;
+padding: $space-sm;
 }
 .conservazione {
 position:relative;
