@@ -3,7 +3,7 @@
 import React from "react";
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import "./style/main.scss";
-import SearchResults from "./components/searchResults.jsx";
+import SearchResults from "./components/SearchResults.jsx";
 import {
   getRandomAppetizer,
   getRandomMaincourse,
@@ -12,12 +12,12 @@ import {
 } from "./services/api";
 import { useEffect, useState } from "react";
 import { SearchBar } from "./components/searchbar";
-import { RandomRecipes } from "./components/randomRecipes.jsx";
+import { RandomRecipes } from "./components/RandomRecipes.jsx";
 import {
   getCachedRandomRecipe,
   getCachedSearch,
 } from "./services/apiCache";
-import { RecipeDetails } from "./pages/recipeDetails.jsx";
+import { RecipeDetails } from "./pages/RecipeDetails.jsx";
 
 function App() {
   // Stati per le 3 ricette random

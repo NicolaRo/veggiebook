@@ -1,4 +1,4 @@
-import { RecipeCard } from "./randomRecipes"; //Importo la struttura della card da RandomRecipes così ottimizzo il codice evitando ripetizioni
+import { RecipeCard } from "./RandomRecipes"; //Importo la struttura della card da RandomRecipes così ottimizzo il codice evitando ripetizioni
 
 function SearchResults({ results, onViewRecipe }) { // Props
 
