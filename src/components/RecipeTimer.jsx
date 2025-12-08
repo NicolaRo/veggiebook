@@ -91,24 +91,40 @@ function RecipeTimer({ totalMinutes }) {
         <div className="recipe-timer-container">
             {!isExpanded ? (
                 <div className="timer-compact">
-                    <img 
+                    <h6 className="timer-header">Apri il timer:</h6>
+                    <button
+                        className="timer-icon"
+                        onClick={() => setIsExpanded(true)}
+                    >
+                        <img 
                         src="/img/stopwatch-icon.png"
                         alt="timer"
                         className="timer-icon"
                     />
-                    <span className="time-display">
-                        {formatTime(seconds)}
-                    </span>
-                    <button
-                        className="timer-expand-button"
-                        onClick={() => setIsExpanded(true)}
-                    >
-                        ▶️
                     </button>
+                    
+                    {/* <span className="time-display">
+                        {formatTime(seconds)}
+                    </span> */}
+                    
                 </div>
             ) : (
-                <div className="timer-extended">
-                    <h4>⏱️ Timer Ricetta</h4>
+                <div className="extended-timer-header">
+                     <h6 className="timer-title">Timer Ricetta</h6>
+                    
+                    
+                   
+
+                    <button 
+                        className="timer-collapse-button"
+                        onClick={() => setIsExpanded(false)}
+                    >
+                        Nascondi timer <img 
+                        src="/img/stopwatch-icon.png"
+                        alt="timer"
+                        className="timer-icon"
+                    />
+                    </button>
                     
                     <div className="timer-mode-toggle">
                         {hasTimer && (
@@ -116,14 +132,23 @@ function RecipeTimer({ totalMinutes }) {
                                 onClick={() => setTimerMode('countdown')}
                                 className={timerMode === 'countdown' ? 'active' : ''}
                             >
-                                ⏱ Countdown ({totalMinutes} min)
+                            <img 
+                                src="/img/start-stopwatch-icon.png"
+                                alt="timer"
+                                className="timer-icon"
+                            />
+                            Countdown ({totalMinutes} min)
                             </button>
                         )}
                         <button 
                             onClick={() => setTimerMode('stopwatch')}
                             className={timerMode === 'stopwatch' ? 'active' : ''}
                         >
-                            ⏲ Cronometro
+                            <img 
+                                src="/img/stopwatch.png"
+                                alt="timer"
+                                className="timer-icon"
+                            />Cronometro
                         </button>
                     </div>
                     
@@ -132,20 +157,25 @@ function RecipeTimer({ totalMinutes }) {
                     </div>
                     
                     <div className="timer-controls">
-                        <button onClick={handlePlayPause}>
-                            {isRunning ? '⏸️ Pausa' : '▶️ Avvia'}
+                    <button onClick={handlePlayPause} className="play-pause-button">
+                            <img 
+                                src={isRunning ? "/img/pause-timer-icon.png" : "/img/start-timer-icon.png"} 
+                                alt={isRunning ? "Pausa" : "Avvia"} 
+                                className="timer-icon"
+                            />
+                            <span>{isRunning ? 'Pausa' : 'Avvia'}</span>
                         </button>
                         <button onClick={handleReset}>
-                            🔄 Reset
+                        <img 
+                                src="/img/timer-reset-icon.png"
+                                alt="timer"
+                                className="timer-icon"
+                            />
+                             Reset
                         </button>
                     </div>
                     
-                    <button 
-                        className="timer-collapse-button"
-                        onClick={() => setIsExpanded(false)}
-                    >
-                        Nascondi ▲
-                    </button>
+                    
                 </div>
             )}
         </div>

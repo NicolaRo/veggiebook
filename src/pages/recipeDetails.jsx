@@ -32,12 +32,12 @@ export function RecipeDetails() {
 
   return (
     <div className="recipe-detail-container">
-      <div className="titolo-ricetta-modale">
+      <div className="recipe-detail-titol">
         <h2>{recipe.title}</h2>
       </div>
 
       <img
-        className="immagine-ricetta-modale"
+        className="recipe-detail-immagine"
         src={recipe.image}
         alt="foto della ricetta"
       />

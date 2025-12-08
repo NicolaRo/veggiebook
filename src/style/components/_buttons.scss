@@ -219,3 +219,31 @@ box-shadow: $glass-box-shadow;
   font-weight: 1000;
 }
 }
+
+//////////////////// Bottoni Timer /////////////////////////
+/// 
+.timer-collapse-button {
+  background-color: $color-primary;
+  border-radius: $glass-radius;
+  border:$glass-border;
+  color: $color-text;
+  font-size: large;
+  font-weight: 700;
+  padding: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.timer-expand-button {
+  background-color: $color-primary;
+  border-radius: $glass-radius;
+  border:$glass-border;
+  color: $color-text;
+  font-size: large;
+  font-weight: 700;
+}
+.play-pause-button{
+  width: fit-content;
+  height:auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
