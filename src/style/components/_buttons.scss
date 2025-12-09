@@ -225,13 +225,13 @@
 .open-timer-button{
   width:25px;
 }
-.timer-collapse-button {
+.timer-collapse-btn {
   background-color: $color-primary;
   border-radius: $glass-radius;
   border:$glass-border;
-  color: $color-text;
+  color: white;
   font-size: large;
-  font-weight: 700;
+  font-weight: 600;
   padding: $space-sm;
   margin-bottom: $space-md;
 }

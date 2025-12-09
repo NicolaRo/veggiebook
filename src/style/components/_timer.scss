@@ -1,50 +1,86 @@
 .recipe-timer-container {
-    position:relative;
     width: 100%;
-   justify-content: space-evenly;
-    padding: 0.3rem;
-}
-.timer-title{
-    font-size: 2rem;
-    font-weight: bold;
-    margin: $space-sm;
-}
-.timer-compact {
-    background: $color-accent;
-}
-
-.timer-header {
-    font-size: medium;
-    color: $color-text;
-}
-
-.extended-timer-header{
-    font-size: medium;
-    color: $color-text;
-}
-
-.timer-icon {
-    width: 25px;
-    height: auto;
-    padding: $space-md;
-}
-
-
-.timer-mode-toggle{
-display: flex;
-flex-direction: row;
-}
-.timer-controls{
+    padding: 0.5rem;
     display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.time-display-large{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timer-title {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .apri-timer-icon,
+  .chiudi-timer-icon{
+    width: 25px;
+  }
+  .timer-compact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: $color-accent;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .extended-timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .timer-mode-toggle {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .timer-controls {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .timer-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: $color-primary;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1vw, 1.2rem);
+    transition: all 0.2s ease;
+  
+    &.active {
+      background: #d9534f; // rosso quando attivo
+    }
+  
+    &:hover {
+      filter: brightness(0.9);
+    }
+  
+    .timer-btn-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  
+  .time-display-large {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 800;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     text-align: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
+  }
+  
