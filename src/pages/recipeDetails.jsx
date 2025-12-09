@@ -3,6 +3,7 @@
   import { getRecipeDetails } from "../services/api";
   import { getCachedRecipeDetails } from "../services/apiCache";
   import RecipeTimer from "../components/RecipeTimer";
+import ShareRecipe from "../components/ShareRecipe";
 
   export function RecipeDetails() {
     const { id } = useParams();
@@ -41,6 +42,7 @@
           src={recipe.image}
           alt="foto della ricetta"
         />
+        <ShareRecipe recipe={recipe}/>
 
         <div
           className="description"
