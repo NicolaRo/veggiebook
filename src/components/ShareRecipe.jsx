@@ -1,55 +1,47 @@
-import React from "react";
+import { useState } from "react";
 
-// Icone social (puoi sostituire con le tue o usare librerie tipo react-icons)
-const socialLinks = {
-  facebook: (url, text) =>
-    `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`,
-  twitter: (url, text) =>
-    `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`,
-  whatsapp: (url, text) =>
-    `https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`,
-};
+export default function ShareRecipe({ recipe }) {
+  const [showSocial, setShowSocial] = useState(false);
 
-function ShareRecipe({ recipe }) {
   if (!recipe) return null;
 
-  const { id, title, totalMinutes } = recipe;
+  const shareMessage = `Ehi non puoi perderti questa ricetta vegetariana gustosissima! Dai un'occhiata a "${recipe.title}" si prepara in ${recipe.readyInMinutes} minuti.`;
 
-  // Componi link condivisibile
-  const recipeUrl = `${window.location.origin}/recipe/${id}`;
-  const shareText = `Ehi, non puoi perderti questa ricetta gustosissima! "${title}" si prepara in ${totalMinutes} minuti.`;
+  // Link per WhatsApp
+  const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`;
+
+  // Link per Facebook (apre la condivisione della pagina)
+  const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+
+  // Link per Twitter
+  const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(window.location.href)}`;
 
   return (
-    <div className="share-recipe-container">
-      <p className="share-text">{shareText}</p>
-      <div className="share-buttons">
-        <a
-          href={socialLinks.facebook(recipeUrl, shareText)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="share-btn facebook"
+    <div className="share-recipe-container" style={{ position: "relative" }}>
+      {/* BOTTONE PRINCIPALE */}
+      <button
+        className="share-button"
+        onClick={() => setShowSocial(!showSocial)}
+      >
+        Condividi
+      </button>
+
+      {/* COLLAPSIBLE SOCIAL */}
+      {showSocial && (
+        <div
+          className="social-buttons"
         >
-          Facebook
-        </a>
-        <a
-          href={socialLinks.twitter(recipeUrl, shareText)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="share-btn twitter"
-        >
-          Twitter
-        </a>
-        <a
-          href={socialLinks.whatsapp(recipeUrl, shareText)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="share-btn whatsapp"
-        >
-          WhatsApp
-        </a>
-      </div>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <img src="/img/whatsapp-icon.png" alt="WhatsApp" width={40} />
+          </a>
+          <a href={facebookLink} target="_blank" rel="noopener noreferrer">
+            <img src="/img/facebook-icon.png" alt="Facebook" width={40} />
+          </a>
+          <a href={twitterLink} target="_blank" rel="noopener noreferrer">
+            <img src="/img/twitter-icon.png" alt="Twitter" width={40} />
+          </a>
+        </div>
+      )}
     </div>
   );
 }
-
-export default ShareRecipe;
