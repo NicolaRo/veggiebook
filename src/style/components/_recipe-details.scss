@@ -9,7 +9,6 @@
   align-items: center;
   padding: 1.5rem 1rem;
   margin-top: $space-lg;
-  background-image: $color-bg;
   width: 100%;
   overflow-y: auto;
 }
@@ -52,6 +51,15 @@
 /* --------------------------------------
    DESCRIZIONE, PREPARAZIONE, CONSERVAZIONE
 -------------------------------------- */
+
+.section-header-container{
+  position: relative;
+  display:flex;
+  flex-direction: column;
+}
+.description{
+  padding:1rem;
+}
 .description,
 .preparazione,
 .conservazione {
@@ -70,39 +78,6 @@
   @include respond(lg) { max-width: 500px; }
 }
 
-/* --------------------------------------
-   BOTTONI SEZIONI
--------------------------------------- */
-.container-bottoni {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: $space-xs;
-  margin: $space-sm auto;
-  width: 95%;
-  max-width: 350px;
-
-  @include respond(md) { max-width: 450px; }
-  @include respond(lg) { max-width: 500px; }
-}
-
-.container-bottoni button {
-  background-color: $color-primary;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  }
-}
 
 /* --------------------------------------
    COLLAPSIBLE SECTIONS

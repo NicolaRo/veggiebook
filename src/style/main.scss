@@ -91,6 +91,18 @@ font-size: 3rem;
 
 }
 
+.section-header {
+  font-size: 1.5rem;
+  text-align: left;
+  margin: $space-md;
+}
+
+.menu-icon {
+  width: 15px;
+  height:auto;
+  margin-left: $space-sm;
+}
+
 .footer {
 background-color:rgba(0, 128, 0, 0.607);
 position:relative;

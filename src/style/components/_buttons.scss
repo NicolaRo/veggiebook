@@ -108,120 +108,123 @@
   }
 }
 
-////////////// Bottoni Ricetta ///////////////
-/// 
-/// 
+
+
+
+//////////////////////////Bottoni Menu //////////////////
+
 
 .container-bottoni{
-display: flex;
-flex-direction: row;
-gap: $space-lg;
-margin-top: $space-lg;
-padding: $space-xs;
-justify-content: center;
-margin-bottom: $space-lg;
-
-  @include respond(md) { // larghezza minima (≥768px)
-    gap: $space-lg;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: $space-lg;
+  padding: $space-sm;
+  justify-content: space-between;
+  margin-bottom: $space-lg;
+  border-radius: $glass-radius;
+  box-shadow: $glass-box-shadow;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  
+    @include respond(md) { // larghezza minima (≥768px)
+      gap: 1rem;
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+      gap: 1rem;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+      gap: 1.5rem;
+    }
+    /* &:hover, */
+    &:focus {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
   }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    gap: $space-lg;
-  }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    gap: $space-xl;
-  }
-}
 
-.bottone-mostra-conservazione {
-position:relative;
-background: $color-primary;
-color: white;
-border: none;
-border-radius: 12px;
-cursor: pointer;
-position: relative;
-backdrop-filter: blur(10px);
-font-size: 0.75rem;
-font-weight: 800;
-height: fit-content;
-padding: $space-sm;
-box-shadow: $glass-box-shadow;
-border:$glass-border;
+.menu-button {
+  position:relative;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: $space-lg;
+  background: $color-primary;
+  color: white;
+  border: $glass-border;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  font-size: 0.75rem;
+  font-weight: 500;
+  height: fit-content;
+  padding: $space-sm;
+  box-shadow: $glass-box-shadow;
+  justify-content: space-evenly;
+  
+    @include respond(md) { // larghezza minima (≥768px)
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  }
 
-  @include respond(md) { // larghezza minima (≥768px)
+
+ .menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; // spazio tra icona e testo
+  background: #62c37194; // colore di default verde
+  color: white;
+  border: $glass-border;
+  border-radius: 12px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  font-size: 0.75rem;
+  font-weight: 500;
+  height: fit-content;
+  padding: 0.5rem;
+  box-shadow: $glass-box-shadow;
+
+  @include respond(md) {
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: 600;
   }
-  @include respond (lg) {// larghezza minima (≥1024px)
+  @include respond(lg) {
     font-size: 1.3rem;
     font-weight: 900;
   }
-  @include respond (xl){ // larghezza minima (≥1440px)
+  @include respond(xl) {
     font-size: 2rem;
     font-weight: 1000;
   }
-}
 
-.bottone-mostra-ingredienti {
-background: #62c370;;
-color: white;
-border: none;
-border-radius: 12px;
-cursor: pointer;
-backdrop-filter: blur(10px);
-font-size: 0.75rem;
-height: fit-content;
-padding: 0.5rem;
-position: relative;
-width: fit-content;
-top: -1008%;
-left: 0;
-box-shadow: $glass-box-shadow;
-@include respond(md) { // larghezza minima (≥768px)
-  font-size: 1rem;
-  font-weight: 900;
-}
-@include respond (lg) {// larghezza minima (≥1024px)
-  font-size: 1.3rem;
-  font-weight: 900;
-}
-@include respond (xl){ // larghezza minima (≥1440px)
-  font-size: 2rem;
-  font-weight: 1000;
-}
-}
+  &.active {
+    background: rgba(255, 0, 0, 0.524); // bottone attivo diventa rosso
+    border: $glass-border;
+  }
 
-.bottone-preparazione {
-  background: #62c370;;
-color: white;
-border: none;
-border-radius: 12px;
-cursor: pointer;
-backdrop-filter: blur(10px);
-font-size: 0.75rem;
-height: fit-content;
-padding: 0.5rem;
-position: relative;
-width: fit-content;
-top: -1008%;
-left: 0;
-box-shadow: $glass-box-shadow;
-@include respond(md) { // larghezza minima (≥768px)
-  font-size: 1rem;
-  font-weight: 900;
-}
-@include respond (lg) {// larghezza minima (≥1024px)
-  font-size: 1.3rem;
-  font-weight: 900;
-}
-@include respond (xl){ // larghezza minima (≥1440px)
-  font-size: 2rem;
-  font-weight: 1000;
-}
+  img.menu-icon {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 //////////////////// Bottoni Timer /////////////////////////
 /// 
+/// 
+.open-timer-button{
+  width:25px;
+}
 .timer-collapse-button {
   background-color: $color-primary;
   border-radius: $glass-radius;
