@@ -46,9 +46,12 @@ flex-direction: row;
   overflow-y: hidden;
   width: 100vw;
   padding: 0 1rem;
-  background-image: linear-gradient(to bottom,azure,#62c370);
-  padding-bottom: 1rem;
-  height: 400px;
+  background-image: linear-gradient(to bottom,azure,#62c371be);
+  padding: 1rem;
+  margin:$space-xs;
+  border:$glass-border;
+  border-radius: $glass-radius;
+  box-shadow: $glass-box-shadow;
 
   &::-webkit-scrollbar{
     height:8px;
@@ -80,7 +83,7 @@ border: 2px solid rgba (255, 255, 255, 0.18);
 border-radius: $glass-radius;
 padding: 0.5rem;
 font-size: 0.90rem;
-width: 85%;
+width: 90%;
   overflow: scroll; // Abilito lo scroll per l'overflow
   text-overflow: ellipsis; // Imposto il text-overflow
   white-space: nowrap; // Lo dispongo su unica fila così si può scrollare per leggere titoli lunghi.

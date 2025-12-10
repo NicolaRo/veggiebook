@@ -64,7 +64,7 @@
   flex-direction: column;
 }
 .description{
-  padding:1rem;
+  padding:1.5rem;
 }
 .description,
 .preparazione,
@@ -73,7 +73,7 @@
   backdrop-filter: blur(20px);
   border-radius: $glass-radius;
   border: $glass-border;
-  padding: $space-sm $space-md;
+  padding: $space-md $space-lg;
   margin: 0.5rem auto;
   width: 95%;
   max-width: 350px;
@@ -157,9 +157,12 @@
   flex: 0 0 120px;
   scroll-snap-align: start;
   text-align: center;
+  font-weight: 700;
   margin: $space-xs;
   font-size: 0.85rem;
   transition: transform 0.2s;
+  list-style-type: none;
+  justify-content: center;
 
   &:hover { transform: scale(1.05); }
 

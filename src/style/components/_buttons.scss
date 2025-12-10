@@ -10,16 +10,15 @@
 }
 
 .search-button{
-  background: #62c370;
+  background: $color-primary;
   color: white;
   font-weight: 800;
   font-size: 1.5rem;
-  border: solid 2px rgba(233, 243, 233, 0.511);
-  padding: 1%;
-  border-radius: 6px;
+  border: $glass-border;
+  padding: $space-sm;
+  border-radius: $glass-radius;
   cursor: pointer;
   max-height: fit-content;
-  border: none;
   box-shadow: $glass-box-shadow;
 
   @include respond(md) { // larghezza minima (≥768px)
@@ -51,7 +50,7 @@
   width:fit-content;
   padding: 0.5rem;
   bottom: 4rem;
-  left: 6.5rem;
+  left: 4.5rem;
   border-radius: $glass-radius;
   box-shadow:$glass-box-shadow;
 
@@ -76,19 +75,20 @@
 }
 
 .recipe-button--search {
-  background:$color-primary;
+  background:$glass-primary;
   color: $button-text;
   border: none;
   border-radius: $glass-radius;
+  border: $glass-border;
   cursor: pointer;
   position: relative;
-  backdrop-filter: blur(20px);
+  backdrop-filter: $glass-backdrop;
   font-weight: bolder;
   font-size: 1.5rem;
   height: fit-content;
   padding: 0.5rem;
-  bottom: 15%;
-  left: 65%;
+  bottom: 3rem;
+  left: 13rem;
   box-shadow: $glass-box-shadow;
 
   @include respond(md) { // larghezza minima (≥768px)
@@ -123,28 +123,32 @@ z-index: 2;
 
 
 .container-bottoni{
+  position:relative;
   font-size: 0.9rem;
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
+  flex-direction: column;
+  width: 100%;
+  gap: $space-xs;
   margin-top: $space-lg;
   padding: $space-sm;
   justify-content: space-between;
   margin-bottom: $space-lg;
   border-radius: $glass-radius;
-  box-shadow: $glass-box-shadow;
   cursor: pointer;
   text-align: center;
   transition: transform 0.2s, box-shadow 0.2s;
   
     @include respond(md) { // larghezza minima (≥768px)
       gap: 1rem;
+      flex-direction: row;
     }
     @include respond (lg) {// larghezza minima (≥1024px)
       gap: 1rem;
+      flex-direction: row;
     }
     @include respond (xl){ // larghezza minima (≥1440px)
       gap: 1.5rem;
+      flex-direction: row;
     }
     /* &:hover, */
     &:focus {
@@ -170,6 +174,8 @@ z-index: 2;
   padding: $space-sm;
   box-shadow: $glass-box-shadow;
   justify-content: space-evenly;
+  font-weight: 600;
+  font-size: $space-md;
   
     @include respond(md) { // larghezza minima (≥768px)
       font-size: 1rem;
@@ -183,44 +189,15 @@ z-index: 2;
       font-size: 2rem;
       font-weight: 700;
     }
-  }
+
+    &.active {
+      background: rgba(255, 0, 0, 0.524); // bottone attivo diventa rosso
+      border: $glass-border;
+    }
+  } 
 
 
- .menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem; // spazio tra icona e testo
-  background: #62c37194; // colore di default verde
-  color: white;
-  border: $glass-border;
-  border-radius: 12px;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  font-size: 0.75rem;
-  font-weight: 500;
-  height: fit-content;
-  padding: 0.5rem;
-  box-shadow: $glass-box-shadow;
 
-  @include respond(md) {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  @include respond(lg) {
-    font-size: 1.3rem;
-    font-weight: 900;
-  }
-  @include respond(xl) {
-    font-size: 2rem;
-    font-weight: 1000;
-  }
-
-  &.active {
-    background: rgba(255, 0, 0, 0.524); // bottone attivo diventa rosso
-    border: $glass-border;
-  }
-}
 
 //////////////////// Bottoni Timer /////////////////////////
 /// 
@@ -255,7 +232,15 @@ z-index: 2;
 }
 
 ///////////////// Bottone Condividi Ricetta /////////////
-
+.sharing-button {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  background: #c5c7c96e;
+  backdrop-filter: blur(3px);
+  bottom: 1rem;
+  right: 1.3rem;
+}
 
 .share-buttons {
   position: absolute;
