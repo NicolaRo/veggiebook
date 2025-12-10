@@ -37,12 +37,16 @@ import ShareRecipe from "../components/ShareRecipe";
           <h2>{recipe.title}</h2>
         </div>
 
+        <div className="img-share-container">
         <img
           className="recipe-detail-immagine"
           src={recipe.image}
           alt="foto della ricetta"
         />
         <ShareRecipe recipe={recipe}/>
+        </div>
+
+        
 
         <div
           className="description"

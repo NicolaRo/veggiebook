@@ -109,26 +109,14 @@
 }
 
 ////////////// Bottoni Condividi //////////////
-.share-button{
-position: "absolute";
-top: "10px";
-right: "10px";
-padding: "8px 12px";
-border-radius: "5px";
-background-color: "#FF6347";
-color: "white";
-border: "none";
-cursor: "pointer";
-z-index: 2;
-}
 
-.social-buttons{
-position: "absolute";
-top: "50px";
-right: "10px";
-display: "flex";
-flex-direction: "column";
-gap: "8px";
+.share-social-buttons{
+position: absolute;
+top: 50px;
+right: 10px;
+display: flex;
+flex-direction: column;
+gap: 8px;
 z-index: 2;
 }
 //////////////////////////Bottoni Menu //////////////////
@@ -232,11 +220,6 @@ z-index: 2;
     background: rgba(255, 0, 0, 0.524); // bottone attivo diventa rosso
     border: $glass-border;
   }
-
-  img.menu-icon {
-    width: 20px;
-    height: 20px;
-  }
 }
 
 //////////////////// Bottoni Timer /////////////////////////
@@ -246,7 +229,7 @@ z-index: 2;
   width:25px;
 }
 .timer-collapse-btn {
-  background-color: $color-primary;
+  background-color: #c36262;
   border-radius: $glass-radius;
   border:$glass-border;
   color: white;
@@ -273,47 +256,38 @@ z-index: 2;
 
 ///////////////// Bottone Condividi Ricetta /////////////
 
-.share-recipe-container {
-  margin-top: 1.5rem;
-  text-align: center;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 12px;
-}
-
-.share-text {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #333;
-  font-weight: 500;
-}
 
 .share-buttons {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.share-btn {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-  transition: all 0.2s ease;
-
-  &.facebook {
-    background: #3b5998;
-  }
-  &.twitter {
-    background: #1da1f2;
-  }
-  &.whatsapp {
-    background: #25d366;
-  }
-
-  &:hover {
-    filter: brightness(0.9);
+  position: absolute;
+  z-index: 1000;
+  top:1rem;
+  right:1rem;
+  border-radius: 50%;
+  width:fit-content;
+  align-items: flex-end;
+  text-align: center;
+  padding: $space-sm;
+  border: $glass-border;
+  background-color: $glass-background;
+  backdrop-filter: blur(5px);
+    
+  
+    @include respond(md) { // larghezza minima (≥768px)
+      top: 11rem;
+      right: 1.3rem;
+    }
+    @include respond (lg) {// larghezza minima (≥1024px)
+      top: 13rem;
+      right: 1.5rem;
+    }
+    @include respond (xl){ // larghezza minima (≥1440px)
+      top: 7rem;
+      right: 1rem;
+    }
+  
+  &.active {
+    background-color: #4CAF50; 
+    border-color: #4CAF50;
+    transform: scale(1.1); 
   }
 }

@@ -14,34 +14,34 @@ export default function ShareRecipe({ recipe }) {
   const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
 
   // Link per Twitter
-  const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(window.location.href)}`;
+  const XLink = `https://x.com/intent/tweet?text=${encodeURIComponent(shareMessage)}&url=${encodeURIComponent(window.location.href)}`;
 
   return (
-    <div className="share-recipe-container" style={{ position: "relative" }}>
+    <>
       {/* BOTTONE PRINCIPALE */}
       <button
-        className="share-button"
+        className={`"share-button" ${showSocial ? "active" : ""}`}
         onClick={() => setShowSocial(!showSocial)}
-      >
-        Condividi
+    >
+        <img className="share-icon" src="/img/share-icon.png" alt="Icona condividi" />
       </button>
 
       {/* COLLAPSIBLE SOCIAL */}
       {showSocial && (
         <div
-          className="social-buttons"
+          className="share-social-buttons"
         >
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <img src="/img/whatsapp-icon.png" alt="WhatsApp" width={40} />
+            <img className="share-icon" src="/img/whatsapp-icon.png" alt="Icona WhatsApp" />
           </a>
           <a href={facebookLink} target="_blank" rel="noopener noreferrer">
-            <img src="/img/facebook-icon.png" alt="Facebook" width={40} />
+            <img className="share-icon" src="/img/facebook-icon.png" alt="Facebook" />
           </a>
-          <a href={twitterLink} target="_blank" rel="noopener noreferrer">
-            <img src="/img/twitter-icon.png" alt="Twitter" width={40} />
+          <a href={XLink} target="_blank" rel="noopener noreferrer">
+            <img className="share-icon" src="/img/X-icon.png" alt="Icona X" />
           </a>
         </div>
       )}
-    </div>
+    </>
   );
 }

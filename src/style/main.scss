@@ -14,6 +14,8 @@
 @import './components/_searchedRecipes.scss';
 @import './base/global';
 @import './components/timer';
+@import './components/icons';
+@import './components/share-recipe';
 
 
 
@@ -97,11 +99,7 @@ font-size: 3rem;
   margin: $space-md;
 }
 
-.menu-icon {
-  width: 15px;
-  height:auto;
-  margin-left: $space-sm;
-}
+
 
 .footer {
 background-color:rgba(0, 128, 0, 0.607);

@@ -35,6 +35,12 @@
 /* --------------------------------------
    IMMAGINE RICETTA
 -------------------------------------- */
+
+.img-share-container {
+  position: relative;
+  
+} 
+
 .recipe-detail-immagine {
   display: block;
   margin: $space-sm auto;
@@ -132,8 +138,8 @@
   z-index: 2;
 }
 
-.container-ingredienti::before { left: 0; background: linear-gradient(to right, $color-bg, transparent); }
-.container-ingredienti::after { right: 0; background: linear-gradient(to left, $color-bg, transparent); }
+.container-ingredienti::before { left: 0; background: linear-gradient(to right, $glass-background, transparent); }
+.container-ingredienti::after { right: 0; background: linear-gradient(to left, $glass-background, transparent); }
 
 /* Hint testo scroll */
 .scroll-hint {

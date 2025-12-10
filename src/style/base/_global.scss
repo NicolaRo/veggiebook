@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: 'poppins';
-  background-color: $color-bg; // definito in _variables.scss
+  background-color: $glass-background; // definito in _variables.scss
   color: $color-text;
   min-height: 100vh; // corpo sempre alto quanto l'intera finestra
   display: flex; // Lo imposto qua così a cascata tutti i "figli" otterranno la struttura flessibile
