@@ -1,85 +1,85 @@
 .recipe-timer-container {
-    width: 100%;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: $glass-radius;
-    border: $glass-border;
+  width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $glass-radius;
+  border: $glass-border;
+}
+  
+.timer-title {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+  
+  
+.timer-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: $color-primary;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: white;
+}
+  
+.extended-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid rgba(156, 153, 153, 0.45);
+  border-radius: 12px;
+  padding: 1rem;
+}
+  
+.timer-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+  
+.timer-controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+  
+.timer-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: $color-primary;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 1vw, 1.2rem);
+  transition: all 0.2s ease;
+
+  &.active {
+    background: $color-accent;
   }
-  
-  .timer-title {
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
+
+  &:hover {
+    filter: brightness(0.9);
   }
+
   
+}
   
-  .timer-compact {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: $color-primary;
-    border-radius: 12px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .extended-timer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.2rem;
-    width: 100%;
-    max-width: 400px;
-    border: 2px solid rgba(156, 153, 153, 0.45);
-    border-radius: 12px;
-    padding: 1rem;
-  }
-  
-  .timer-mode-toggle {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-  }
-  
-  .timer-controls {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    margin-top: 1rem;
-  }
-  
-  .timer-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-    background: $color-primary;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: clamp(0.9rem, 1vw, 1.2rem);
-    transition: all 0.2s ease;
-  
-    &.active {
-      background: $color-accent;
-    }
-  
-    &:hover {
-      filter: brightness(0.9);
-    }
-  
-    
-  }
-  
-  .time-display-large {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2rem, 4vw, 3rem);
-    text-align: center;
-  }
+.time-display-large {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+}
   

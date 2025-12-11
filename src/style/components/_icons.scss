@@ -1,9 +1,8 @@
-//////////// MAIN ICONS \\\\\\\\
-
+//MAIN ICONS
 .menu-icon {
-width: 15px;
-height:auto;
-margin-left: $space-sm;
+    width: 15px;
+    height:auto;
+    margin-left: $space-sm;
 }
 
 .share-icon{
@@ -11,14 +10,17 @@ margin-left: $space-sm;
     margin: $space-sm;
 }
 
-///////////// MENU ICONS \\\\\\\\\\\\\
-
-img.menu-icon {
-width: 40px;
-height: auto;
+.no-results-icon {
+    width:100vw;
 }
 
-////////////// TIMER ICONS \\\\\\\\\\\\
+//MENU ICONS
+img.menu-icon {
+    width: 40px;
+    height: auto;
+}
+
+//TIMER ICONS
 .apri-timer-icon,
   .chiudi-timer-icon{
     width: 25px;

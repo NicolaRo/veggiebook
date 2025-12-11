@@ -1,154 +1,136 @@
-.random-recipes-cards-container{
-display: flex;
-flex-direction: row;
-}
-
-.recipe-card--random {
-  position: relative;
-  min-width: 25vh;
-  width: 25vh;
-  height: 35vh;
-  border-radius: $glass-radius;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  padding: 0;
-  bottom: -10%;
-  
-  @include respond(md) { // larghezza minima (≥768px)
-    min-width: 36vh;
-    width: 40vh;
-    height: 30vh;
-    padding: 0;
-    bottom: 0rem;
-    margin-left: 5.5rem;
-  }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    min-width: 36vh;
-    height: 30vh;
-    bottom: -3rem;
-    margin-left: 5.5rem;
-  }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    min-width: 46vh;
-    height: 40vh;
-    padding: 0;
-    margin-left: 5%;
-    bottom: -3rem;
-  }
-}
-  
+// Container principale per le ricette random
 .random-recipes-container {
   position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 2rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
-  width: 100vw;
-  padding: 0 1rem;
-  background-image: linear-gradient(to bottom,azure,#62c371be);
+  width: 95vw;
+  height: fit-content;
   padding: 1rem;
-  margin:$space-xs;
-  border:$glass-border;
+  margin: $space-xs;
+  background-image: linear-gradient(to bottom, azure, #62c371be);
+  border: $glass-border;
   border-radius: $glass-radius;
-  box-shadow: $glass-box-shadow;
 
-  &::-webkit-scrollbar{
-    height:8px;
+  &::-webkit-scrollbar {
+    height: 8px;
   }
 }
 
+// Header delle ricette random
 .random-recipes-header {
   font-size: 2rem;
   margin: 0.75rem;
   text-align: center;
 }
 
+// Card della ricetta random
+.recipe-card--random {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 25vh;
+  width: 25vh;
+  height: 35vh;
+  padding: 0;
+  border-radius: $glass-radius;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+
+  @include respond(md) {
+    min-width: 36vh;
+    width: 40vh;
+    height: 30vh;
+    margin-left: 5.5rem;
+  }
+
+  @include respond(lg) {
+    min-width: 36vh;
+    height: 30vh;
+    margin-left: 5.5rem;
+  }
+
+  @include respond(xl) {
+    min-width: 46vh;
+    height: 40vh;
+    margin-left: 5%;
+  }
+}
+
+// Immagine della ricetta
 .recipe-image--random {
-border-radius: $glass-radius;
-object-fit: cover;
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
+  border-radius: $glass-radius;
+  object-fit: cover;
 }
 
+// Titolo della ricetta
 .recipe-title--random {
-position: absolute;
-top: 0.5rem;
-left: 0.5rem;
-background-color:$glass-bg;
-backdrop-filter: blur(20px);
-color:$color-text;
-box-shadow:$glass-box-shadow;
-border: 2px solid rgba (255, 255, 255, 0.18);
-border-radius: $glass-radius;
-padding: 0.5rem;
-font-size: 0.90rem;
-width: 90%;
-  overflow: scroll; // Abilito lo scroll per l'overflow
-  text-overflow: ellipsis; // Imposto il text-overflow
-  white-space: nowrap; // Lo dispongo su unica fila così si può scrollare per leggere titoli lunghi.
-
-@include respond(md) { // larghezza minima (≥768px)
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 90%;
   padding: 0.5rem;
-  font-size: 1.2rem;
-  width: 92%;
-  overflow: scroll;
-  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  color: $color-text;
+  background-color: $glass-bg;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: $glass-radius;
+  box-shadow: $glass-box-shadow;
   white-space: nowrap;
-}
-@include respond (lg) {// larghezza minima (≥1024px)
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  width: 92%;
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-}
-@include respond (xl){ // larghezza minima (≥1440px)
-  padding: 0.7rem;
-  font-size: 2rem;
-  width: 95%;
-  overflow: scroll;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 
-}
-
-.recipe-time--random{
-position: relative;
-width: fit-content;
-bottom: 80%;
-left: 5%;
-right: 1 rem;
-background-color: rgba(255, 255, 255, 0.14);
-backdrop-filter: blur(20px);
-border-radius: 12px;
-color: #1c1c1c;
-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
-padding: 0.35rem;
-font-size: 0.65rem;
-font-size: 12px;
-
-  @include respond(md) { // larghezza minima (≥768px)
-    bottom: 75%;
-    left: 3%;
-    padding: 0.45rem;
-    font-size: 0.85rem;
-    height:fit-content;
-    margin-top: 1rem;
+  &::-webkit-scrollbar {
+    height: 4px;
   }
-  @include respond (lg) {// larghezza minima (≥1024px)
-    bottom: 85%;
-    left: 2%;
-    padding: 0.55rem;
-    font-size: 0.85rem;
-    height:fit-content;
-    margin-top: 1.5rem;
+
+  @include respond(md) {
+    width: 92%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
   }
-  @include respond (xl){ // larghezza minima (≥1440px)
-    height:fit-content;
-    margin-top: 2rem;
-    left: 0.75rem;
+
+  @include respond(lg) {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  @include respond(xl) {
+    padding: 0.7rem;
+    font-size: 2rem;
+    width: 95%;
+  }
+}
+
+// Tempo di preparazione
+.recipe-time--random {
+  position: absolute;
+  bottom: 8rem;
+  left: $space-sm;
+  width: fit-content;
+  padding: 0.35rem;
+  font-size: 0.65rem;
+  color: #f7f3f3;
+  background-color: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+
+  @include respond(md) {
+    font-size: 0.75rem;
+    bottom: 7rem;
+  }
+
+  @include respond(lg) {
+    font-size: 0.85rem;
+  }
+
+  @include respond(xl) {
+    font-size: 1rem;
   }
 }

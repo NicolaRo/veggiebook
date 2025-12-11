@@ -1,11 +1,15 @@
+//Strumento di condivisione della ricetta
 import { useState } from "react";
 
+//Funzione per esportare i dettagli della ricetta:
 export default function ShareRecipe({ recipe }) {
   const [showSocial, setShowSocial] = useState(false);
 
   if (!recipe) return null;
 
-  const shareMessage = `Ehi non puoi perderti questa ricetta vegetariana gustosissima! Dai un'occhiata a "${recipe.title}" si prepara in ${recipe.readyInMinutes} minuti.`;
+  //Salvo un messaggio da includere nella condivisione della ricetta, il titolo e l'ID
+  const recipeUrl = `${window.location.origin}/ricetta/${recipe.id}`;
+  const shareMessage = `Ehi non puoi perderti questa ricetta vegetariana gustosissima! Dai un'occhiata a "${recipe.title}" si prepara in ${recipe.readyInMinuti} minuti. Aprila subito: ${recipeUrl}`;
 
   // Link per WhatsApp
   const whatsappLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareMessage)}`;
