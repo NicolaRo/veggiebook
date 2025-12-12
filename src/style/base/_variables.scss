@@ -1,5 +1,5 @@
 // Breakpoints - taglie dello schermo "$sm" = small; "$md" = medium.. ecc
-
+$xs: 320px;   // Extra small: smartphone < 350px 
 $sm: 480px;   // Small: smartphone
 $md: 768px;   // Medium: tablet
 $lg: 1024px;  // Large: laptop
@@ -10,7 +10,7 @@ $xl: 1440px;  // Extra large: monitor desktop
 $color-primary: #62c370;
 $color-accent: #397e43;
 $glass-background: rgba(255, 255, 255, 0.488);
-$glass-backdrop: blur (20px);
+$glass-backdrop: blur (4px);
 $color-text: #012b03;
 
 // Palette bottoni

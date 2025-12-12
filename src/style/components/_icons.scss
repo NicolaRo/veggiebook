@@ -6,8 +6,26 @@
 }
 
 .share-icon{
-    width: 30px;
-    margin: $space-sm;
+    width: 25px;
+    margin: $space-xs;
+    @include respond(xs) { 
+        // larghezza minima (≥350px)
+        width: 30px;
+    }
+
+    @include respond(md) {
+        // larghezza minima (≥768px)
+        margin: 0.5rem;
+    }
+
+  @include respond(lg) {
+        // larghezza minima (≥1024px)
+
+    }
+
+  @include respond(xl) {
+        // larghezza minima (≥1440px)
+    }
 }
 
 .no-results-icon {
@@ -16,8 +34,33 @@
 
 //MENU ICONS
 img.menu-icon {
-    width: 40px;
+    width: 25px;
     height: auto;
+
+    @include respond(xs) { 
+        // larghezza minima (≥320px)
+        width: 30px;
+    }
+
+    @include respond (sm){
+        // larghezza minima (≥480px)
+        width: 35px;
+    }
+
+    @include respond(md) {
+        // larghezza minima (≥768px)
+        width: 40px;
+    }
+
+  @include respond(lg) {
+        // larghezza minima (≥1024px)
+        width: 50px;
+    }
+
+  @include respond(xl) {
+        // larghezza minima (≥1440px)
+        width: 60px;
+    }
 }
 
 //TIMER ICONS

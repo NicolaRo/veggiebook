@@ -110,16 +110,48 @@
 }
 
 //Bottoni Condividi
-.share-social-buttons{
-position: absolute;
-top: 5rem;
-right: 1rem;
-border-radius: 50%;
-display: flex;
-flex-direction: column;
-gap: 1rem;
-z-index: 2;
+.share-social-buttons {
+  position: absolute;
+  right: 1rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 2;
+  top: 0.5rem;
+  background: $glass-background;
+  backdrop-filter: $glass-backdrop;
+  border:$glass-border;
+  border-radius: $glass-radius;
+  box-shadow: $glass-box-shadow;
+
+  @include respond(xs) { 
+      // larghezza minima (≥350px)
+  }
+
+  @include respond(md) {
+    // larghezza minima (≥768px)
+    right: 1rem;
+  }
+
+@include respond(lg) {
+    // larghezza minima (≥1024px)
+
+  }
+
+@include respond(xl) {
+    // larghezza minima (≥1440px)
+    top: 0.5rem;
+    right: 1.5rem;
+  }
+
 }
+
+
+
+
+
+
 
 //Bottoni Menu
 .container-bottoni{
@@ -174,6 +206,7 @@ height: fit-content;
 padding: $space-sm;
 box-shadow: $glass-box-shadow;
 justify-content: space-evenly;
+align-items: center;
 font-weight: 600;
 font-size: $space-md;
 
@@ -210,6 +243,10 @@ font-size: $space-md;
   font-weight: 600;
   padding: $space-sm;
   margin-bottom: $space-md;
+  
+  &.active {
+    background-color: $color-close;
+  }
 }
 
 .timer-expand-button {
@@ -235,8 +272,27 @@ font-size: $space-md;
   z-index: 1;
   background: #c5c7c96e;
   backdrop-filter: blur(3px);
-  bottom: 1rem;
-  right: 1.3rem;
+  bottom: 0.5rem;
+  right: 1rem;
+  @include respond (xs) { // larghezza minima (≥320px)
+
+  }
+  @include respond (sm) { // larghezza minima (≥480px)
+
+  }
+
+  @include respond (md) { // larghezza minima (≥768px)
+    bottom: 0.75rem;
+    right: 1.5rem;
+  }
+  @include respond (lg) {// larghezza minima (≥1024px)
+    bottom: 0.75rem;
+    right: 1.8rem;
+  }
+  @include respond (xl){ // larghezza minima (≥1440px)
+    bottom: 0.75rem;
+    right: 1.8rem;
+  }
 }
 
 .share-buttons {
@@ -252,9 +308,14 @@ font-size: $space-md;
   border: $glass-border;
   background-color: $glass-background;
   backdrop-filter: blur(5px);
-    
+    @include respond (xs) { // larghezza minima (≥320px)
+
+    }
+    @include respond (sm) { // larghezza minima (≥480px)
+
+    }
   
-    @include respond(md) { // larghezza minima (≥768px)
+    @include respond (md) { // larghezza minima (≥768px)
       top: 11rem;
       right: 1.3rem;
     }
