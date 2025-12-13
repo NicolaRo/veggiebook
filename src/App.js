@@ -11,7 +11,7 @@ import {
   searchRecipes,
 } from "./services/api";
 import { useEffect, useState } from "react";
-import { SearchBar } from "./components/searchbar";
+import { SearchBar } from "./components/Searchbar.js";
 import { RandomRecipes } from "./components/RandomRecipes.jsx";
 import {
   getCachedRandomRecipe,
