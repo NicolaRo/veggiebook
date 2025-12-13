@@ -3,7 +3,7 @@
   import { getRecipeDetails } from "../services/api";
   import { getCachedRecipeDetails } from "../services/apiCache";
   import RecipeTimer from "../components/RecipeTimer";
-import ShareRecipe from "../components/ShareRecipe";
+  import ShareRecipe from "../components/ShareRecipe";
 
   export function RecipeDetails() {
     const { id } = useParams();
