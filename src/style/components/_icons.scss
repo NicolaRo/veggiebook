@@ -70,6 +70,12 @@ img.menu-icon {
 }
 
 .timer-btn-icon {
-    width: 30px;
+    width: 15px;
     height: auto;
+    @include respond (md) {
+        width: 25px;
+    }
+    @include respond (xl) {
+        width: 35px;
+    }
 }

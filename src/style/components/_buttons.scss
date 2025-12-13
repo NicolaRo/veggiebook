@@ -50,27 +50,27 @@
   height: fit-content;
   width:fit-content;
   padding: 0.5rem;
-  bottom: 3rem;
+  bottom: 2.5rem;
   left: 4.5rem;
   border-radius: $glass-radius;
   box-shadow:$glass-box-shadow;
 
   @include respond(md) { // larghezza minima (≥768px)
     padding: 0.5rem;
-    bottom: 5.5rem;
-    left: 10rem;
+    bottom: 2.8rem;
+    left: 9.5rem;
     font-size: 1rem;
   }
   @include respond (lg) {// larghezza minima (≥1024px)
     padding: 0.5rem;
-    bottom: 6.5rem;
-    left: 10.2rem;
+    bottom: 3.5rem;
+    left: 9.2rem;
     font-size: 1rem;
   }
   @include respond (xl){ // larghezza minima (≥1440px)
     padding: 0.5rem;
-    bottom: 7.4rem;
-    left: 13rem;
+    bottom: 3.4rem;
+    left: 10rem;
     font-size: 1.3rem;
   }
 }
@@ -85,22 +85,34 @@
   position: relative;
   backdrop-filter: $glass-backdrop;
   font-weight: bolder;
-  font-size: 1.5rem;
+  font-size: 1rem;
   height: fit-content;
   padding: 0.5rem;
-  bottom: 3rem;
-  left: 13rem;
+  bottom: 2.5rem;
+  left: 12rem;
   box-shadow: $glass-box-shadow;
 
+  @include respond (xs) { // larghezza minima (≥320px)
+    font-size: 1rem;
+    bottom: 2.5rem;
+    left: 13rem;
+  }
+  @include respond (sm) { // larghezza minima (≥480px)
+    font-size: 1rem;
+    bottom: 2.5rem;
+    left: 23rem;
+  }
+
   @include respond(md) { // larghezza minima (≥768px)
-    font-size: 1.5rem;
-    top: -15%;
-    left: 80%;   
+    font-size: 2rem;
+    bottom: 4rem;
+    left: 35rem;
+    background-color: $color-accent;
     }
     @include respond (lg) {// larghezza minima (≥1024px)
-    font-size: 2rem;
-    top: -15%;
-    left: 80%;
+      font-size: 2rem;
+      bottom: 1rem;
+      left: 47rem;
     }
     @include respond (xl){ // larghezza minima (≥1440px)
     font-size: 2.5rem;
@@ -131,7 +143,7 @@
 
   @include respond(md) {
     // larghezza minima (≥768px)
-    right: 1rem;
+    right: 1.5rem;
   }
 
 @include respond(lg) {
@@ -235,18 +247,33 @@ font-size: $space-md;
 }
 
 .timer-collapse-btn {
-  background-color: $color-accent;
+  background-color: $color-close;
   border-radius: $glass-radius;
   border:$glass-border;
   color: white;
-  font-size: large;
   font-weight: 600;
   padding: $space-sm;
-  margin-bottom: $space-md;
+  margin-bottom: $space-sm;
   
-  &.active {
-    background-color: $color-close;
+
+  @include respond(md) { // larghezza minima (≥768px)
+    font-size: 1rem;
+    font-weight: 600;
   }
+  @include respond (lg) {// larghezza minima (≥1024px)
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  @include respond (xl){ // larghezza minima (≥1440px)
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &.active {
+    background: rgba(255, 0, 0, 0.524); // bottone attivo diventa rosso
+    border: $glass-border;
+  }
+
 }
 
 .timer-expand-button {

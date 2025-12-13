@@ -110,7 +110,7 @@
 // Tempo di preparazione
 .recipe-time--random {
   position: absolute;
-  bottom: 8rem;
+  bottom: 10rem;
   left: $space-sm;
   width: fit-content;
   padding: 0.35rem;
@@ -120,6 +120,13 @@
   backdrop-filter: blur(20px);
   border-radius: 12px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+
+  @include respond (xs) {
+    
+  }
+  @include respond (sm) {
+
+  }
 
   @include respond(md) {
     font-size: 0.75rem;

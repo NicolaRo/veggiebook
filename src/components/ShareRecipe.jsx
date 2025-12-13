@@ -24,7 +24,7 @@ export default function ShareRecipe({ recipe }) {
     <>
       {/* BOTTONE PRINCIPALE */}
       <button
-        className={`"sharing-button" ${showSocial ? "active" : ""}`}
+        className={`sharing-button ${showSocial ? "active" : ""}`}
         onClick={() => setShowSocial(!showSocial)}
     >
         <img className="share-icon" src="/img/share-icon.png" alt="Icona condividi" />

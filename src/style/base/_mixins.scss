@@ -2,13 +2,24 @@
 
 // Mixin per media queries
 @mixin respond($breakpoint) {
-    @if $breakpoint == sm { // Se la variabile "breakpoint" è = a sm (quindi small = smartphone) 
-      @media (min-width: $sm) { @content; } // imposta una larghezza minima uguale a 480px (definita in _variables.scss)
-    } @else if $breakpoint == md { // Se invece il breakpoint è uguale a md (quindi medium = tablet) 
+  // Se la variabile "breakpoint" è = a sm (quindi extra-small = smartphone)
+    @if $breakpoint == xs {
+      @media (min-width: $xs) {@content; } // imposta una larghezza minima uguale a 320px
+    } 
+    
+    @else if $breakpoint == sm {
+      @media (min-width: $sm) { @content; } // imposta una larghezza minima uguale a 480px
+    } 
+    
+    @else if $breakpoint == md { // Se invece il breakpoint è uguale a md (quindi medium = tablet) 
       @media (min-width: $md) { @content; } // imposta una larghezza minima uguale a 768px
-    } @else if $breakpoint == lg { // Se invece il breakpoint è uguale a lg (quindi large = laptop)
+    } 
+    
+    @else if $breakpoint == lg { // Se invece il breakpoint è uguale a lg (quindi large = laptop)
       @media (min-width: $lg) { @content; } // imposta una larghezza minima uguale a 1024px
-    } @else if $breakpoint == xl { // Se invece il breakpoint è uguale a xl (quindi extra-large = desktop)
+    } 
+    
+    @else if $breakpoint == xl { // Se invece il breakpoint è uguale a xl (quindi extra-large = desktop)
       @media (min-width: $xl) { @content; } // imposta una larghezza minima uguale a 1440px
     }
   }
