@@ -1,4 +1,3 @@
-// apiCache.js
 // ==================================================================
 // OBBIETTIVO EFFICIENZA: Cache in memoria per risparmiare chiamate API
 // ==================================================================
